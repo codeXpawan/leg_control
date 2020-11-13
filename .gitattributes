@@ -1,0 +1,2 @@
+src/ros2_jazzy/meshes/osl_shank.dae filter=lfs diff=lfs merge=lfs -text
+*.dae filter=lfs diff=lfs merge=lfs -text
