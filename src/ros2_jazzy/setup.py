@@ -31,7 +31,7 @@ setup(
             'oslsim_controller = ros2_jazzy.controller:main',
             'loadcell = ros2_jazzy.loadcell:main',
             'oslsim_walker = ros2_jazzy.walk:main',
-            # 'oslsim_pid_tuner = ros2_jazzy.tuner:main',
+            'oslsim_pid_tuner = ros2_jazzy.tuner:main',
         ],
     },
 )
