@@ -1,27 +1,41 @@
-#!/usr/bin/env python
-import rospy
+#!/usr/bin/env python3
+import rclpy
+from rclpy.node import Node
 from std_msgs.msg import Float32
 from gazebo_msgs.msg import ContactsState
 
-class Loadcell(object):
+class Loadcell(Node):
     def __init__(self):
-        self.pub_fx = rospy.Publisher('/oslsim/loadcell_fx', Float32, queue_size=10)
-        self.pub_fy = rospy.Publisher('/oslsim/loadcell_fy', Float32, queue_size=10)
-        self.pub_fz = rospy.Publisher('/oslsim/loadcell_fz', Float32, queue_size=10)
+        super().__init__('loadcell')
+        self.pub_fx = self.create_publisher(Float32, '/oslsim/loadcell_fx', 10)
+        self.pub_fy = self.create_publisher(Float32, '/oslsim/loadcell_fy', 10)
+        self.pub_fz = self.create_publisher(Float32, '/oslsim/loadcell_fz', 10)
 
     def publish_fx(self, val=0.0):
-        self.pub_fx.publish(val)
+        msg = Float32()
+        msg.data = val
+        self.pub_fx.publish(msg)
 
     def publish_fy(self, val=0.0):
-        self.pub_fy.publish(val)
+        msg = Float32()
+        msg.data = val
+        self.pub_fy.publish(msg)
 
     def publish_fz(self, val=0.0):
-        self.pub_fz.publish(val)
+        msg = Float32()
+        msg.data = val
+        self.pub_fz.publish(msg)
 
-class LoadcellSub(object):
+class LoadcellSub(Node):
     def __init__(self):
-        rospy.Subscriber('/oslsim/loadcell', ContactsState, self.loadcell_callback)
+        super().__init__('loadcell_sub')
         self.lc = Loadcell()
+        self.sub = self.create_subscription(
+            ContactsState,
+            '/oslsim/loadcell',
+            self.loadcell_callback,
+            10
+        )
 
     def loadcell_callback(self, data):
         x = 0.0
@@ -37,11 +51,19 @@ class LoadcellSub(object):
         self.lc.publish_fy(y)
         self.lc.publish_fz(z)
 
-    def go(self):
-        rospy.spin()
+def main(args=None):
+    rclpy.init(args=args)
+
+    # Create nodes
+    loadcell_sub_node = LoadcellSub()
+    
+    try:
+        rclpy.spin(loadcell_sub_node)
+    except KeyboardInterrupt:
+        pass
+
+    loadcell_sub_node.destroy_node()
+    rclpy.shutdown()
 
 if __name__ == '__main__':
-    rospy.init_node('loadcell', anonymous=True)
-    lc_sub = LoadcellSub()
-    lc_sub.go()
-    
+    main()
