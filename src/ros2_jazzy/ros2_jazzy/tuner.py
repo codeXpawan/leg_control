@@ -1,11 +1,13 @@
-#!/usr/bin/env python
-from Tkinter import *
+#!/usr/bin/env python3
+import rclpy
+from rclpy.node import Node
 from pid_tune.msg import PidTune
-import rospy
+from tkinter import *
 
-class PID():
+class PID(Node):
 	def __init__(self, title, topic, kp=100, ki=0, kd=0, queue_size=1000):
-		self.pub_pid = rospy.Publisher(topic, PidTune, queue_size=queue_size)
+		super().__init__('pid_gui_' + topic.replace('/', '_'))
+		self.pub_pid = self.create_publisher(PidTune, topic, queue_size)
 		self.pid_params = PidTune()
 
 		self.root = Tk()
@@ -32,14 +34,27 @@ class PID():
 
 	def set_value(self):
 
-		self.pid_params.Kp = self.kpscale.get()
-		self.pid_params.Ki = self.kiscale.get()
-		self.pid_params.Kd = self.kdscale.get()
+		self.pid_params.kp = float(self.kpscale.get())
+		self.pid_params.ki = float(self.kiscale.get())
+		self.pid_params.kd = float(self.kdscale.get())
 		self.pub_pid.publish(self.pid_params)
 
-rospy.init_node('oslsim_pid_pub',anonymous=True)
-osl_knee_pid = PID(title='OSL Knee PID', topic='/oslsim/osl_knee/pid', kp=250, ki=4, kd=1)
-osl_ankle_pid = PID(title='OSL Ankle PID', topic='/oslsim/osl_ankle/pid', kp=50, ki=0, kd=0)
+def main(args=None):
+    rclpy.init(args=args)
 
-osl_knee_pid.root.mainloop()
-osl_ankle_pid.root.mainloop()
+    # Create PID GUIs
+    osl_knee_pid = PID(title='OSL Knee PID', topic='/oslsim/osl_knee/pid', kp=250, ki=4, kd=1)
+    osl_ankle_pid = PID(title='OSL Ankle PID', topic='/oslsim/osl_ankle/pid', kp=50, ki=0, kd=0)
+
+    # Start Tkinter GUI mainloops
+    osl_knee_pid.root.mainloop()
+    osl_ankle_pid.root.mainloop()
+
+    # Cleanup
+    osl_knee_pid.destroy_node()
+    osl_ankle_pid.destroy_node()
+    rclpy.shutdown()
+
+
+if __name__ == "__main__":
+    main()
