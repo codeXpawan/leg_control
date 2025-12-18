@@ -1,15 +1,23 @@
 #!/usr/bin/env python
-import rospy
-import rospkg
-from std_msgs.msg import Float32, Int32
+#!/usr/bin/env python3
+
+import rclpy
+from rclpy.node import Node
+
+from std_msgs.msg import Float32
 from sensor_msgs.msg import Imu
-from tf.transformations import euler_from_quaternion, quaternion_from_euler
 from pid_tune.msg import PidTune
+
+from tf_transformations import euler_from_quaternion
+from ament_index_python.packages import get_package_share_directory
+
 import numpy as np
 import pickle
+import os
+
 
 class JointCmds:
-    def __init__(self, joints, path):
+    def __init__(self, node: Node, joints, path):
         self.jnt_cmd_dict = {}
         self.joints_list = joints
         self.t = 0.0
@@ -38,20 +46,20 @@ class JointCmds:
         self.ki_ankle = 0 * 0.01
         self.kd_ankle = 0 * 0.01
 
-        rospy.Subscriber('/oslsim/imu/osl_shank', Imu, self.osl_knee_pose_cb)
-        rospy.Subscriber('/oslsim/imu/osl_foot', Imu, self.osl_ankle_pose_cb)
-        rospy.Subscriber('/oslsim/osl_knee/pid', PidTune, self.osl_knee_pid_cb)
-        rospy.Subscriber('/oslsim/osl_ankle/pid', PidTune, self.osl_ankle_pid_cb)
-    
+        node.create_subscription(Imu, '/oslsim/imu/osl_shank', self.osl_knee_pose_cb, 10)
+        node.create_subscription(Imu, '/oslsim/imu/osl_foot', self.osl_ankle_pose_cb, 10)
+        node.create_subscription(PidTune, '/oslsim/osl_knee/pid', self.osl_knee_pid_cb, 10)
+        node.create_subscription(PidTune, '/oslsim/osl_ankle/pid', self.osl_ankle_pid_cb, 10)
+
     def osl_knee_pid_cb(self,data):
-        self.kp_knee=float(data.Kp)*0.01
-        self.kd_knee=float(data.Kd)*0.01
-        self.ki_knee=float(data.Ki)*0.01
+        self.kp_knee=float(data.kp)*0.01
+        self.kd_knee=float(data.kd)*0.01
+        self.ki_knee=float(data.ki)*0.01
         
     def osl_ankle_pid_cb(self,data):
-        self.kp_ankle=float(data.Kp)*0.01
-        self.kd_ankle=float(data.Kd)*0.01
-        self.ki_ankle=float(data.Ki)*0.01
+        self.kp_ankle=float(data.kp)*0.01
+        self.kd_ankle=float(data.kd)*0.01
+        self.ki_ankle=float(data.ki)*0.01
 
     def osl_knee_pose_cb(self, data):
         temp = [data.orientation.x, data.orientation.y, data.orientation.z, data.orientation.w]
@@ -102,35 +110,48 @@ class JointCmds:
         self.t += dt
         return self.jnt_cmd_dict
 
-class Controller:
+class Controller(Node):
     def __init__(self, joints, hz):
+        super().__init__('oslsim_controller')
+
         self.joints = joints
-        self.hz = hz
+        self.dt = 1.0 / hz
 
-    def run(self):
-        rospack = rospkg.RosPack()
-        cwd = rospack.get_path('oslsim')
-        pub={}
-        ns_str = '/oslsim/'
-        for j in self.joints:
-            pub[j] = rospy.Publisher(ns_str + j + '/command', Float32, queue_size=10)
+        pkg_path = get_package_share_directory('ros2_jazzy')
 
-        rospy.init_node('oslsim_controller', anonymous=True)
+        self.joints_publishers = {}
+        for j in joints:
+            self.joints_publishers[j] = self.create_publisher(
+                Float32,
+                f'/oslsim/{j}/command',
+                10
+            )
 
-        rate = rospy.Rate(self.hz)
-        jntcmds = JointCmds(joints=self.joints, path=cwd)
-        
-        while not rospy.is_shutdown():
-            jnt_cmd_dict = jntcmds.update(1)
-            for jnt in jnt_cmd_dict.keys() :
-                pub[jnt].publish(jnt_cmd_dict[jnt])
-            rate.sleep()
+        self.jntcmds = JointCmds(self, joints, pkg_path)
 
-if __name__ == "__main__":
+        self.create_timer(self.dt, self.control_loop)
+
+    def control_loop(self):
+        jnt_cmd_dict = self.jntcmds.update(self.dt)
+        for j, val in jnt_cmd_dict.items():
+            msg = Float32()
+            msg.data = float(val)
+            self.joints_publishers[j].publish(msg)
+
+def main():
+    rclpy.init()
+    joints = ['osl_knee', 'osl_ankle']
+    node = Controller(joints=joints, hz=10)
+
     try:
-        joints = ['osl_knee', 'osl_ankle']
-        pid = Controller(joints=joints, hz=10)
-        pid.run()
-
-    except rospy.ROSInterruptException:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
         pass
+
+    node.destroy_node()
+    rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
+
