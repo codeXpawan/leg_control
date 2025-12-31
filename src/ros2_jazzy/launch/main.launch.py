@@ -38,15 +38,17 @@ def generate_launch_description():
 
     # Spawn robot in Gazebo using the generated URDF
     urdf_spawner = Node(
-        package='ros_gz_sim',
-        executable='create',
-        arguments=[
-            '-name', 'oslsim',
-            '-file', urdf_file,
-            '-x', '0', '-y', '0', '-z', '0.5'
-        ],
-        output='screen'
-    )
+    package='ros_gz_sim',
+    executable='create',
+    arguments=[
+        '-name', 'oslsim',
+        '-string', Command(['xacro ', os.path.join(oslsim_share, 'urdf/oslsim.xacro'), 
+                            ' mesh_dir:=', os.path.join(oslsim_share,)]),
+        '-x', '0', '-y', '0', '-z', '0.5'
+    ],
+    output='screen'
+)
+
 
     # Robot state publisher
     robot_state_publisher_node = Node(
