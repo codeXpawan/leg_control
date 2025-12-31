@@ -1,0 +1,38 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 50
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    hip_position_controller:
+      type: effort_controllers/JointPositionController
+      joint: hip
+      pid:
+        p: 10.0
+        i: 0.1
+        d: 0.01
+
+    osl_hip_position_controller:
+      type: effort_controllers/JointPositionController
+      joint: osl_hip
+      pid:
+        p: 10.0
+        i: 0.1
+        d: 0.01
+
+    knee_position_controller:
+      type: effort_controllers/JointPositionController
+      joint: knee
+      pid:
+        p: 10.0
+        i: 0.1
+        d: 0.01
+
+    ankle_position_controller:
+      type: effort_controllers/JointPositionController
+      joint: ankle
+      pid:
+        p: 10.0
+        i: 0.1
+        d: 0.01
