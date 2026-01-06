@@ -18,7 +18,7 @@ def generate_launch_description():
     # Robot description as xacro command (for robot_state_publisher)
     robot_description = ParameterValue(
         Command(['xacro ', PathJoinSubstitution([oslsim_share, 'urdf/oslsim.xacro']),
-                 ' mesh_dir:=', PathJoinSubstitution([oslsim_share, 'meshes'])]),
+                 ' mesh_dir:=', "package://ros2_jazzy"]),
         value_type=str
     )
 
@@ -125,17 +125,18 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        walk_arg,
-        control_arg,
-        xacro_to_urdf,  # Generate URDF before spawning
+        # walk_arg,
+        # control_arg,
+        # xacro_to_urdf,  # Generate URDF before spawning
         robot_state_publisher_node,
-        gz_launch,
-        urdf_spawner,
-        joint_state_bridge,
-        imu_bridges,
-        controller_spawner,
-        loadcell_node,
-        walker_node,
-        controller_node,
-        pid_tuner_node
+        # gz_launch,
+        # urdf_spawner,
+        # joint_state_bridge,
+        # imu_bridges,
+        # controller_spawner,
+        # loadcell_node,
+        # walker_node,
+        # controller_node,
+        # pid_tuner_node
     ])
+
