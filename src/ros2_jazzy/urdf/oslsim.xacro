@@ -2,56 +2,6 @@
 <robot name="oslsim" xmlns:xacro="http://www.ros.org/wiki/xacro">
 <xacro:property name="mesh_dir" value="package://ros2_jazzy"/>
 
-
-  <!-- ========================= -->
-  <!-- ROS 2 CONTROL INTERFACE  -->
-  <!-- ========================= -->
-
-  <!-- <ros2_control name="OSLSimSystem" type="system">
-    <hardware>
-      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
-    </hardware>
-
-    <joint name="hip">
-      <command_interface name="effort"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-
-    <joint name="osl_hip">
-      <command_interface name="effort"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-
-    <joint name="knee">
-      <command_interface name="effort"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-
-    <joint name="ankle">
-      <command_interface name="effort"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-  </ros2_control> -->
-
-  <!-- Gazebo ROS 2 Control Plugin -->
-
-  <!-- <gazebo>
-    <plugin name="ros_gz_control" filename="libgz_ros2_control_system.so">
-      <ros>
-        <param>file: $(arg mesh_dir)/config/controllers.yaml</param>
-      </ros>
-    </plugin>
-  </gazebo> -->
-
-
   <!-- ========================= -->
   <!-- WORLD & BASE STRUCTURE   -->
   <!-- ========================= -->
@@ -74,10 +24,10 @@
   </link>
 
   <joint name="slider_joint" type="prismatic">
-      <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0 0 1" rpy="0.0 0.0 0.0"/>
       <parent link="world" />
       <child link="slider" />
-      <axis xyz="1 0 0" />
+      <axis xyz="1 1 0" />
       <limit effort="1" lower="-10.0" upper="100.0" velocity="1" />
       <dynamics damping="0.05" friction="0.1"/>
   </joint>
@@ -181,16 +131,16 @@
         <mesh
           filename="$(arg mesh_dir)/meshes/socket.dae" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
     </visual>
     <collision>
       <origin
         xyz="0.0149 -0.105 -0.18907"
         rpy="1.5708 0 0" />
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
       <geometry>
         <box size="0.15 0.3 0.15"/>
       </geometry>
@@ -231,10 +181,8 @@
           filename="$(arg mesh_dir)/meshes/osl_shin.STL" 
           scale="0.00091 0.00091 0.00091"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
+      <material name="blue_leg">
+        <color rgba="0.2 0.4 1.0 1"/>
       </material>
     </visual>
     <collision>
@@ -244,8 +192,21 @@
       <geometry>
         <box size="0.15 0.3 0.15"/>
       </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
     </collision>
   </link>
+
+  <gazebo reference="osl_shin">
+  <material>
+    <ambient>0.2 0.4 1 1</ambient>
+    <diffuse>0.2 0.4 1 1</diffuse>
+    <specular>0.1 0.1 0.1 1</specular>
+  </material>
+</gazebo>
  
   <joint name="osl_knee" type="revolute">
     <parent link="socket"/>
@@ -295,11 +256,6 @@
       <geometry>
         <mesh filename="$(arg mesh_dir)/meshes/shin.dae"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
     </visual>
     <collision>
       <origin
@@ -308,6 +264,11 @@
       <geometry>
         <box size="0.1 0.35 0.1"/>
       </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
     </collision>
     <inertial>
       <origin
@@ -343,11 +304,6 @@
       <geometry>
         <mesh filename="$(arg mesh_dir)/meshes/foot.dae"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
     </visual>
     <collision>
       <origin
@@ -356,6 +312,11 @@
       <geometry>
         <box size="0.0675 0.025 0.2"/>
       </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
       <surface>
         <friction>
           <ode>
@@ -490,11 +451,6 @@
           filename="$(arg mesh_dir)/meshes/osl_foot.obj"
           scale="0.00091 0.00091 0.00091"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.0 0.80 0.0 1" />
-      </material>
     </visual>
     <collision>
       <origin
@@ -503,6 +459,11 @@
       <geometry>
         <box size="0.0675 0.025 0.2"/>
       </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0 0.80 0.0 1" />
+      </material>
       <surface>
         <friction>
           <ode>
@@ -581,27 +542,104 @@
   <!-- IMU SENSOR (ROS 2 OK)    -->
   <!-- ========================= -->
 
-  <!-- <gazebo reference="shin">
-    <sensor name="shin_imu" type="imu">
-      <topic>imu/osl_shank</topic>
-      <imu>
-        <frame>shin</frame>
-      </imu>
+  <gazebo reference="osl_ankle_imu">
+    <sensor name="ankle_imu" type="imu">
       <always_on>true</always_on>
-      <update_rate>50</update_rate>
+      <update_rate>200</update_rate>
+      <visualize>true</visualize>
+
+      <imu>
+        <angular_velocity>
+          <x><noise type="gaussian"><mean>0</mean><stddev>0.0003</stddev></noise></x>
+          <y><noise type="gaussian"><mean>0</mean><stddev>0.0003</stddev></noise></y>
+          <z><noise type="gaussian"><mean>0</mean><stddev>0.0003</stddev></noise></z>
+        </angular_velocity>
+        <linear_acceleration>
+          <x><noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise></x>
+          <y><noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise></y>
+          <z><noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise></z>
+        </linear_acceleration>
+      </imu>
     </sensor>
   </gazebo>
 
-  <gazebo reference="foot">
-    <sensor name="foot_imu" type="imu">
-      <topic>imu/osl_foot</topic>
-      <imu>
-        <frame>foot</frame>
-      </imu>
+
+  <gazebo reference="osl_shin_imu">
+    <sensor name="shin_imu" type="imu">
       <always_on>true</always_on>
-      <update_rate>50</update_rate>
+      <update_rate>200</update_rate>
+      <visualize>true</visualize>
+
+      <imu>
+        <angular_velocity>
+          <x><noise type="gaussian"><mean>0</mean><stddev>0.0003</stddev></noise></x>
+          <y><noise type="gaussian"><mean>0</mean><stddev>0.0003</stddev></noise></y>
+          <z><noise type="gaussian"><mean>0</mean><stddev>0.0003</stddev></noise></z>
+        </angular_velocity>
+        <linear_acceleration>
+          <x><noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise></x>
+          <y><noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise></y>
+          <z><noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise></z>
+        </linear_acceleration>
+      </imu>
     </sensor>
-  </gazebo> -->
+  </gazebo>
+
+  <!-- ========================= -->
+  <!-- ROS 2 CONTROL INTERFACE  -->
+  <!-- ========================= -->
+
+
+
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+    
+    <joint name="slider_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="hip">
+      <command_interface name="position" />
+      <state_interface name="position" />
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="osl_hip">
+      <command_interface name="position" />
+      <state_interface name="position" />
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="knee">
+      <command_interface name="position" />
+      <state_interface name="position" />
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="osl_knee">
+      <command_interface name="position" />
+      <state_interface name="position" />
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="ankle">
+      <command_interface name="position" />
+      <state_interface name="position" />
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="osl_ankle">
+      <command_interface name="position" />
+      <state_interface name="position" />
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
+
+
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find ros2_jazzy)/config/controllers.yaml</parameters>
+    </plugin>
+  </gazebo>
 
 
 

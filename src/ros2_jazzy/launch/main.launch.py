@@ -1,14 +1,16 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, ExecuteProcess, IncludeLaunchDescription, RegisterEventHandler
 from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration, Command, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from ament_index_python.packages import get_package_share_directory
 from launch_ros.descriptions import ParameterValue
+from launch.event_handlers import OnProcessExit
 import os
 
 def generate_launch_description():
+    use_sim_time = LaunchConfiguration('use_sim_time', default=True)
     oslsim_share = get_package_share_directory('ros2_jazzy')
 
     # Launch arguments
@@ -22,6 +24,7 @@ def generate_launch_description():
         value_type=str
     )
 
+    world_path = os.path.join(oslsim_share, 'worlds', 'main.world')
     # Generate URDF from XACRO for Gazebo spawn
     urdf_file = os.path.join(oslsim_share, 'urdf', 'oslsim.urdf')
     xacro_to_urdf = ExecuteProcess(
@@ -33,21 +36,54 @@ def generate_launch_description():
     ros_gz_sim = get_package_share_directory('ros_gz_sim')
     gz_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(ros_gz_sim, 'launch', 'gz_sim.launch.py')),
-        launch_arguments={'gz_args': '-r -v4 empty.sdf'}.items()
+        launch_arguments={'gz_args': f'-r -v4 {world_path}'}.items()
     )
 
     # Spawn robot in Gazebo using the generated URDF
+#     urdf_spawner = Node(
+#     package='ros_gz_sim',
+#     executable='create',
+#     arguments=['-topic', 'robot_description', '-name',
+#                    'leg', '-allow_renaming', 'true'],
+#     output='screen'
+# )
     urdf_spawner = Node(
-    package='ros_gz_sim',
-    executable='create',
-    arguments=[
-        '-name', 'oslsim',
-        '-string', Command(['xacro ', os.path.join(oslsim_share, 'urdf/oslsim.xacro'), 
-                            ' mesh_dir:=', os.path.join(oslsim_share,)]),
-        '-x', '0', '-y', '0', '-z', '0.5'
-    ],
-    output='screen'
-)
+        package='ros_gz_sim',
+        executable='create',
+        arguments=[
+            '-name', 'oslsim',
+            '-string', Command(['xacro ', os.path.join(oslsim_share, 'urdf/oslsim.xacro'), 
+                                ' mesh_dir:=', os.path.join(oslsim_share,)]),
+            '-x', '0', '-y', '0', '-z', '0.5'
+        ],
+        output='screen'
+    )
+    robot_controllers = os.path.join(oslsim_share, 'config', 'controllers.yaml')
+
+    joint_state_broadcaster_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['joint_state_broadcaster'],
+    )
+
+    leg_controller_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=[
+            'leg_controller',
+            '--param-file',
+            robot_controllers,
+            '--controller-ros-args',
+            '-r /leg_controller/tf_odometry:=/tf',
+        ],
+    )
+
+    bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'],
+        output='screen'
+    )
 
 
     # Robot state publisher
@@ -59,7 +95,7 @@ def generate_launch_description():
                      'publish_frequency': 50.0,
                      'ignore_timestamp': True,
                      'tf_prefix': 'oslsim'}],
-        remappings=[('/joint_states', '/oslsim/joint_states')],
+        # remappings=[('/joint_states', '/oslsim/joint_states')],
         output='screen'
     )
 
@@ -67,7 +103,7 @@ def generate_launch_description():
     joint_state_bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
-        arguments=['/oslsim/joint_states@sensor_msgs/msg/JointState@gz.msgs.Model'],
+        arguments=['/joint_states@sensor_msgs/msg/JointState@gz.msgs.Model'],
         output='screen'
     )
 
@@ -124,15 +160,40 @@ def generate_launch_description():
         condition=IfCondition(LaunchConfiguration('control'))
     )
 
+
+    
     return LaunchDescription([
+        bridge,
+        gz_launch,
+        RegisterEventHandler(
+            event_handler=OnProcessExit(
+                target_action=urdf_spawner,
+                on_exit=[joint_state_broadcaster_spawner],
+            )
+        ),
+        RegisterEventHandler(
+            event_handler=OnProcessExit(
+                target_action=joint_state_broadcaster_spawner,
+                on_exit=[leg_controller_spawner],
+            )
+        ),
+        urdf_spawner,
+        DeclareLaunchArgument(
+            'use_sim_time',
+            default_value=use_sim_time,
+            description='If true, use simulated clock'),
+        DeclareLaunchArgument(
+            'description_format',
+            default_value='urdf',
+            description='Robot description format to use, urdf or sdf'),
         # walk_arg,
         # control_arg,
         # xacro_to_urdf,  # Generate URDF before spawning
         robot_state_publisher_node,
-        # gz_launch,
-        # urdf_spawner,
         # joint_state_bridge,
-        # imu_bridges,
+        imu_bridges,
+        # joint_state_broadcaster_spawner,
+        # spawn_jsb_then_leg,
         # controller_spawner,
         # loadcell_node,
         # walker_node,
