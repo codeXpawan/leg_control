@@ -19,24 +19,24 @@ def generate_launch_description():
 
     # Robot description as xacro command (for robot_state_publisher)
     robot_description = ParameterValue(
-        Command(['xacro ', PathJoinSubstitution([oslsim_share, 'urdf/oslsim.xacro']),
+        Command(['xacro ', PathJoinSubstitution([oslsim_share, 'urdf/newoslsim.xacro']),
                  ' mesh_dir:=', "package://ros2_jazzy"]),
         value_type=str
     )
 
     world_path = os.path.join(oslsim_share, 'worlds', 'main.world')
     # Generate URDF from XACRO for Gazebo spawn
-    urdf_file = os.path.join(oslsim_share, 'urdf', 'oslsim.urdf')
-    xacro_to_urdf = ExecuteProcess(
-        cmd=['xacro', os.path.join(oslsim_share, 'urdf/oslsim.xacro'), '-o', urdf_file],
-        shell=True
-    )
+    # urdf_file = os.path.join(oslsim_share, 'urdf', 'oslsim.urdf')
+    # xacro_to_urdf = ExecuteProcess(
+    #     cmd=['xacro', os.path.join(oslsim_share, 'urdf/oslsim.xacro'), '-o', urdf_file],
+    #     shell=True
+    # )
 
     # Gazebo launch
     ros_gz_sim = get_package_share_directory('ros_gz_sim')
     gz_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(ros_gz_sim, 'launch', 'gz_sim.launch.py')),
-        launch_arguments={'gz_args': f'-r -v4 {world_path}'}.items()
+        launch_arguments={'gz_args': f'-r -v4 empty.sdf'}.items()
     )
 
     # Spawn robot in Gazebo using the generated URDF
@@ -52,9 +52,8 @@ def generate_launch_description():
         executable='create',
         arguments=[
             '-name', 'oslsim',
-            '-string', Command(['xacro ', os.path.join(oslsim_share, 'urdf/oslsim.xacro'), 
-                                ' mesh_dir:=', os.path.join(oslsim_share,)]),
-            '-x', '0', '-y', '0', '-z', '0.5'
+            '-file', os.path.join(oslsim_share, 'urdf/oslsim.sdf'),
+            '-x', '0', '-y', '0', '-z', '1.1'
         ],
         output='screen'
     )
@@ -100,19 +99,20 @@ def generate_launch_description():
     )
 
     # Bridges for joint states and IMU
-    joint_state_bridge = Node(
-        package='ros_gz_bridge',
-        executable='parameter_bridge',
-        arguments=['/joint_states@sensor_msgs/msg/JointState@gz.msgs.Model'],
-        output='screen'
-    )
+    # joint_state_bridge = Node(
+    #     package='ros_gz_bridge',
+    #     executable='parameter_bridge',
+    #     arguments=['/joint_states@sensor_msgs/msg/JointState@gz.msgs.Model'],
+    #     output='screen'
+    # )
 
     imu_bridges = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=[
-            '/oslsim/imu/osl_shank@sensor_msgs/msg/Imu@gz.msgs.IMU',
-            '/oslsim/imu/osl_foot@sensor_msgs/msg/Imu@gz.msgs.IMU',
+            '/imu/foot@sensor_msgs/msg/Imu@gz.msgs.IMU',
+            '/imu/osl_shank@sensor_msgs/msg/Imu@gz.msgs.IMU',
+            '/foot/touched@std_msgs/msg/Bool@gz.msgs.Boolean',
         ],
         output='screen'
     )

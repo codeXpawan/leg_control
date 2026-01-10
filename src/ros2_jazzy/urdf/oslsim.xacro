@@ -6,7 +6,12 @@
   <!-- WORLD & BASE STRUCTURE   -->
   <!-- ========================= -->
 
-  <link name="world">
+  <link name="base_link">
+    <inertial>
+          <origin rpy="0.0 0 0" xyz="0 0 0"/>
+          <mass value="0.001" />
+          <inertia ixx="1.0e-07" ixy="0.0" ixz="0.0" iyy="1.0e-07" iyz="0.0" izz="1.0e-07"/>
+      </inertial>
   </link>
 
   <link name="slider">
@@ -25,7 +30,7 @@
 
   <joint name="slider_joint" type="prismatic">
       <origin xyz="0 0 1" rpy="0.0 0.0 0.0"/>
-      <parent link="world" />
+      <parent link="base_link" />
       <child link="slider" />
       <axis xyz="1 1 0" />
       <limit effort="1" lower="-10.0" upper="100.0" velocity="1" />

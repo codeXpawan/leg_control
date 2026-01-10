@@ -10,5 +10,5 @@ controller_manager:
 
 leg_controller:
   ros__parameters:
-    type: position_controllers/JointGroupPositionController
-    joints: ['slider_joint','hip','osl_hip','knee', 'osl_knee', 'ankle','osl_ankle']
+    type: effort_controllers/JointGroupEffortController
+    joints: ['hip','osl_hip','knee', 'osl_knee', 'ankle','osl_ankle']
