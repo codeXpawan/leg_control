@@ -52,7 +52,8 @@ def generate_launch_description():
         executable='create',
         arguments=[
             '-name', 'oslsim',
-            '-file', os.path.join(oslsim_share, 'urdf/oslsim.sdf'),
+            '-string', Command(['xacro ', os.path.join(oslsim_share, 'urdf/newoslsim.xacro'), 
+                                ' mesh_dir:=', os.path.join(oslsim_share,)]),
             '-x', '0', '-y', '0', '-z', '1.1'
         ],
         output='screen'

@@ -554,11 +554,11 @@
 
   <gazebo reference="osl_foot_loadcell_link">
     <sensor name='sensor_contact' type='contact'>
-      <always_on>true</always_on>
-      <update_rate>50</update_rate>
-      <topic>contact/foot</topic>
+      <!-- <always_on>true</always_on> -->
+      <!-- <update_rate>50</update_rate> -->
+      <!-- <topic>contact/foot</topic> -->
       <contact>
-          <collision>osl_foot_loadcell_link_collision_1</collision>
+          <collision>osl_foot_loadcell_link_collision_1_collision_1</collision>
       </contact>
     </sensor>
   </gazebo>
@@ -642,6 +642,16 @@
   <gazebo>
     <plugin filename="gz-sim-imu-system"
           name="gz::sim::systems::Imu">
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin filename="gz-sim-touchplugin-system"
+          name="gz::sim::systems::TouchPlugin">
+      <target>ground_plane</target>
+      <namespace>foot</namespace>
+      <time>0.001</time>
+      <enabled>true</enabled>
     </plugin>
   </gazebo>
 
