@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float64
+from std_msgs.msg import Float64MultiArray
 from ament_index_python.packages import get_package_share_directory
 import pickle
 class JointCmds:
@@ -40,11 +40,11 @@ class WalkerNode(Node):
 
         self.jntcmds = JointCmds(joints=joints, path=cwd)
         self.pub = {}
-        ns_str = '/oslsim/'
+        ns_str = '/'
         cont_str = '_position_controller'
 
         for j in joints:
-            self.pub[j] = self.create_publisher(Float64, ns_str + j + cont_str + '/command', 10)
+            self.pub[j] = self.create_publisher(Float64MultiArray, ns_str + j + cont_str + '/commands', 10)
 
         timer_period = 1.0 / hz
         self.timer = self.create_timer(timer_period, self.timer_callback)
@@ -52,8 +52,8 @@ class WalkerNode(Node):
     def timer_callback(self):
         jnt_cmd_dict = self.jntcmds.update(1)
         for jnt in jnt_cmd_dict.keys():
-            msg = Float64()
-            msg.data = jnt_cmd_dict[jnt]
+            msg = Float64MultiArray()
+            msg.data = [jnt_cmd_dict[jnt]]
             self.pub[jnt].publish(msg)
 
 
