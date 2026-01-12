@@ -85,7 +85,17 @@ def generate_launch_description():
             '/imu/foot@sensor_msgs/msg/Imu@gz.msgs.IMU',
             '/imu/osl_shank@sensor_msgs/msg/Imu@gz.msgs.IMU',
             '/foot/touched@std_msgs/msg/Bool@gz.msgs.Boolean',
+            '/oslsim/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry',
+            '/model/oslsim/odometry_with_covariance@nav_msgs/msg/Odometry@gz.msgs.OdometryWithCovariance',
+            '/model/oslsim/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V',
+            '/world/empty/model/oslsim/joint_state@sensor_msgs/msg/JointState[gz.msgs.Model',
         ],
+        remappings=[
+            # Stitches the Gazebo world-position onto the ROS global transform tree
+            ('/model/oslsim/tf', '/tf'),
+            ('/world/empty/model/oslsim/joint_state', '/joint_states')
+        ],
+        parameters=[{'use_sim_time': True}],
         output='screen'
     )
 
