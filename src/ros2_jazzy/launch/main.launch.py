@@ -58,11 +58,11 @@ def generate_launch_description():
     # )
 
     joint_controllers = [
-    'hip_controller',
-    'osl_hip_controller',
-    'knee_controller',
+    'hip_position_controller',
+    'osl_hip_position_controller',
+    'knee_position_controller',
     'osl_knee_controller',
-    'ankle_controller',
+    'ankle_position_controller',
     'osl_ankle_controller'
     ]
 

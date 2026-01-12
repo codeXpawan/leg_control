@@ -596,22 +596,19 @@
       </hardware>
 
       <joint name="hip">
-        <command_interface name="effort"/>
+        <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
-        <state_interface name="effort"/>
       </joint>
       <joint name="osl_hip">
-        <command_interface name="effort"/>
+        <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
-        <state_interface name="effort"/>
       </joint>
       <joint name="knee">
-        <command_interface name="effort"/>
+        <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
-        <state_interface name="effort"/>
       </joint>
       <joint name="osl_knee">
         <command_interface name="effort"/>
@@ -620,10 +617,9 @@
         <state_interface name="effort"/>
       </joint>
       <joint name="ankle">
-        <command_interface name="effort"/>
+        <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
-        <state_interface name="effort"/>
       </joint>
       <joint name="osl_ankle">
         <command_interface name="effort"/>

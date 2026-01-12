@@ -4,7 +4,7 @@
 import rclpy
 from rclpy.node import Node
 
-from std_msgs.msg import Float32
+from std_msgs.msg import Float32MultiArray
 from sensor_msgs.msg import Imu
 from pid_tune.msg import PidTune
 
@@ -46,8 +46,8 @@ class JointCmds:
         self.ki_ankle = 0 * 0.01
         self.kd_ankle = 0 * 0.01
 
-        node.create_subscription(Imu, '/oslsim/imu/osl_shank', self.osl_knee_pose_cb, 10)
-        node.create_subscription(Imu, '/oslsim/imu/osl_foot', self.osl_ankle_pose_cb, 10)
+        node.create_subscription(Imu, '/imu/osl_shank', self.osl_knee_pose_cb, 10)
+        node.create_subscription(Imu, '/imu/foot', self.osl_ankle_pose_cb, 10)
         node.create_subscription(PidTune, '/oslsim/osl_knee/pid', self.osl_knee_pid_cb, 10)
         node.create_subscription(PidTune, '/oslsim/osl_ankle/pid', self.osl_ankle_pid_cb, 10)
 
@@ -122,8 +122,8 @@ class Controller(Node):
         self.joints_publishers = {}
         for j in joints:
             self.joints_publishers[j] = self.create_publisher(
-                Float32,
-                f'/oslsim/{j}/command',
+                Float32MultiArray,
+                f'/{j}_controller/commands',
                 10
             )
 
@@ -134,8 +134,8 @@ class Controller(Node):
     def control_loop(self):
         jnt_cmd_dict = self.jntcmds.update(self.dt)
         for j, val in jnt_cmd_dict.items():
-            msg = Float32()
-            msg.data = float(val)
+            msg = Float32MultiArray()
+            msg.data = [float(val)]
             self.joints_publishers[j].publish(msg)
 
 def main():
