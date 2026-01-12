@@ -13,10 +13,6 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default=True)
     oslsim_share = get_package_share_directory('ros2_jazzy')
 
-    # Launch arguments
-    walk_arg = DeclareLaunchArgument('walk', default_value='true')
-    control_arg = DeclareLaunchArgument('control', default_value='true')
-
     # Robot description as xacro command (for robot_state_publisher)
     robot_description = ParameterValue(
         Command(['xacro ', PathJoinSubstitution([oslsim_share, 'urdf/newoslsim.xacro']),
@@ -24,29 +20,12 @@ def generate_launch_description():
         value_type=str
     )
 
-    world_path = os.path.join(oslsim_share, 'worlds', 'main.world')
-    # Generate URDF from XACRO for Gazebo spawn
-    # urdf_file = os.path.join(oslsim_share, 'urdf', 'oslsim.urdf')
-    # xacro_to_urdf = ExecuteProcess(
-    #     cmd=['xacro', os.path.join(oslsim_share, 'urdf/oslsim.xacro'), '-o', urdf_file],
-    #     shell=True
-    # )
-
     # Gazebo launch
     ros_gz_sim = get_package_share_directory('ros_gz_sim')
     gz_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(ros_gz_sim, 'launch', 'gz_sim.launch.py')),
         launch_arguments={'gz_args': f'-r -v4 empty.sdf'}.items()
     )
-
-    # Spawn robot in Gazebo using the generated URDF
-#     urdf_spawner = Node(
-#     package='ros_gz_sim',
-#     executable='create',
-#     arguments=['-topic', 'robot_description', '-name',
-#                    'leg', '-allow_renaming', 'true'],
-#     output='screen'
-# )
     urdf_spawner = Node(
         package='ros_gz_sim',
         executable='create',
@@ -99,15 +78,7 @@ def generate_launch_description():
         output='screen'
     )
 
-    # Bridges for joint states and IMU
-    # joint_state_bridge = Node(
-    #     package='ros_gz_bridge',
-    #     executable='parameter_bridge',
-    #     arguments=['/joint_states@sensor_msgs/msg/JointState@gz.msgs.Model'],
-    #     output='screen'
-    # )
-
-    imu_bridges = Node(
+    msg_bridges = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=[
@@ -187,14 +158,8 @@ def generate_launch_description():
             'description_format',
             default_value='urdf',
             description='Robot description format to use, urdf or sdf'),
-        # walk_arg,
-        # control_arg,
-        # xacro_to_urdf,  # Generate URDF before spawning
         robot_state_publisher_node,
-        # joint_state_bridge,
-        imu_bridges,
-        # joint_state_broadcaster_spawner,
-        # spawn_jsb_then_leg,
+        msg_bridges,
         # controller_spawner,
         # loadcell_node,
         # walker_node,
