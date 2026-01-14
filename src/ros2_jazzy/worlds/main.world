@@ -5,14 +5,17 @@
             <background>1.00000 1.00000 1.00000 1.000000</background>
             <shadows>0</shadows>
         </scene>
-        <physics type="dart">
-            <gravity>0.000000 0.00000 -1.0</gravity>
+        <physics type="ignored">
             <max_step_size>0.01</max_step_size>
             <real_time_factor>1</real_time_factor>
             <real_time_update_rate>100</real_time_update_rate>            
             <update_rate>0.000000</update_rate>
         </physics>
-        <model name="gplane">
+        <plugin name='gz::sim::systems::Physics' filename='gz-sim-physics-system'/>
+        <plugin name='gz::sim::systems::UserCommands' filename='gz-sim-user-commands-system'/>
+        <plugin name='gz::sim::systems::SceneBroadcaster' filename='gz-sim-scene-broadcaster-system'/>
+        <plugin name='gz::sim::systems::Contact' filename='gz-sim-contact-system'/>
+        <model name="ground_plane">
             <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
             <link name="plane">
                 <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>

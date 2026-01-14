@@ -4,7 +4,7 @@
 import rclpy
 from rclpy.node import Node
 
-from std_msgs.msg import Float32MultiArray
+from std_msgs.msg import Float64MultiArray
 from sensor_msgs.msg import Imu
 from pid_tune.msg import PidTune
 
@@ -122,7 +122,7 @@ class Controller(Node):
         self.joints_publishers = {}
         for j in joints:
             self.joints_publishers[j] = self.create_publisher(
-                Float32MultiArray,
+                Float64MultiArray,
                 f'/{j}_controller/commands',
                 10
             )
@@ -134,7 +134,7 @@ class Controller(Node):
     def control_loop(self):
         jnt_cmd_dict = self.jntcmds.update(self.dt)
         for j, val in jnt_cmd_dict.items():
-            msg = Float32MultiArray()
+            msg = Float64MultiArray()
             msg.data = [float(val)]
             self.joints_publishers[j].publish(msg)
 
