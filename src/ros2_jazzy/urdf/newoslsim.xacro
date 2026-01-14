@@ -2,13 +2,19 @@
 <robot name="oslsim" xmlns:xacro="http://www.ros.org/wiki/xacro">
     <xacro:property name="mesh_dir" value="package://ros2_jazzy"/>
     
-    <link name="base_link">
-      <inertial>
-        <origin rpy="0.0 0 0" xyz="0 0 0"/>
-        <mass value="0.001" />
-        <inertia ixx="1.0e-07" ixy="0.0" ixz="0.0" iyy="1.0e-07" iyz="0.0" izz="1.0e-07"/>
+  <link name="world"/>
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0.0 0 0" xyz="0 0 0"/>
+      <mass value="0.00001" />
+      <inertia ixx="1.0e-07" ixy="0.0" ixz="0.0" iyy="1.0e-07" iyz="0.0" izz="1.0e-07"/>
     </inertial>
-    </link>
+  </link>
+  
+  <joint name="base_link_joint" type="fixed">
+    <parent link="world" />
+      <child link="base_link" />
+  </joint>
 
   <link name="slider">
     <!-- <visual>
@@ -20,16 +26,19 @@
     </inertial>
     <collision>
         <origin rpy="0.0 0 0" xyz="0 0 0"/>
-        <material>
-          <ambient>1 0 0 1</ambient>
-          <diffuse>1 0 0 1</diffuse>
-          <specular>0.1 0.1 0.1 1</specular>
-        </material>
         <geometry>
             <box size="0.25 0.25 0.01"/>
         </geometry>
     </collision>
   </link>
+
+  <gazebo reference="slider">
+      <kp>1000.0</kp>
+      <kd>1000.0</kd>
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <material>Gazebo/Red</material>
+  </gazebo>
 
   <joint name="slider_joint" type="prismatic">
       <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
@@ -47,6 +56,14 @@
             <inertia ixx="4.16666666667e-05" ixy="0.0" ixz="0.0" iyy="4.16666666667e-05" iyz="0.0" izz="4.16666666667e-05"/>
         </inertial>
   </link>
+
+  <gazebo reference="entity">
+      <kp>1000.0</kp>
+      <kd>1000.0</kd>
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <material>Gazebo/Blue</material>
+  </gazebo>
 
   <joint name="entity_joint" type="fixed">
       <parent link="slider"/>
@@ -71,7 +88,14 @@
         izz="0.001" />
     </inertial>
   </link>
-  
+
+  <gazebo reference="body">
+      <kp>1000.0</kp>
+      <kd>1000.0</kd>
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+  </gazebo>
+
   <joint name="root_joint" type="fixed">
     <parent link="entity"/>
     <child link="body"/>
@@ -115,30 +139,15 @@
       <geometry>
         <box size="0.15 0.3 0.15"/>
       </geometry>
-      <!-- <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material> -->
-      <surface>
-          <friction>
-            <ode>
-              <mu>0.5</mu>
-              <mu2>0.5</mu2>
-            </ode>
-          </friction>
-
-          <contact>
-            <ode>
-              <kp>1000.0</kp>
-              <kd>1000.0</kd>
-              <max_vel>0.01</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-        </surface>
     </collision>
   </link>
+
+  <gazebo reference="thigh">
+      <kp>1000.0</kp>
+      <kd>1000.0</kd>
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+  </gazebo>
 
   <joint name="hip" type="revolute">
     <parent link="body"/>
@@ -191,6 +200,12 @@
     </collision>
   </link>
 
+  <gazebo reference="socket">
+      <kp>1000.0</kp>
+      <kd>1000.0</kd>
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>   
+  </gazebo>
 
   <joint name="osl_hip" type="revolute">
     <parent link="body"/>
@@ -241,6 +256,13 @@
       </geometry>
     </collision>
   </link>
+
+  <gazebo reference="shin">
+      <kp>1000.0</kp>
+      <kd>1000.0</kd>
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>  
+  </gazebo>
 
   <joint name="knee"
     type="revolute">
@@ -299,6 +321,10 @@
   </link>
 
   <gazebo reference="osl_shank">
+    <kp>1000.0</kp>
+    <kd>1000.0</kd>
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
     <!-- Native gz-sim IMU sensor -->
     <sensor name="osl_foot_imu" type="imu">
       <always_on>true</always_on>
@@ -396,6 +422,13 @@
       </surface>
     </collision>
   </link>
+
+  <gazebo reference="foot">
+      <kp>1000.0</kp>
+      <kd>1000.0</kd>
+      <mu1>1.0</mu1>
+      <mu2>1.0</mu2>    
+  </gazebo>
 
   <joint name="ankle"
     type="revolute">
@@ -509,6 +542,13 @@
       </collision>
   </link>
 
+  <gazebo reference="foot_heel">
+      <kp>1000.0</kp>
+      <kd>1000.0</kd>
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+  </gazebo>
+
   <joint name="foot_heel_joint" type="fixed">
       <parent link="foot"/>
       <child link="foot_heel"/>
@@ -526,25 +566,15 @@
           <geometry>
               <sphere radius="0.020"/>
           </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>0.5</mu>
-                <mu2>0.5</mu2>
-              </ode>
-            </friction>
-
-            <contact>
-              <ode>
-                <kp>1000.0</kp>
-                <kd>1000.0</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0.001</min_depth>
-              </ode>
-            </contact>
-          </surface>
       </collision>
   </link>
+
+  <gazebo reference="osl_foot_loadcell_link">
+      <kp>1000.0</kp>
+      <kd>1000.0</kd>
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+  </gazebo>
 
   <joint name="osl_foot_loadcell_link_joint" type="fixed">
       <parent link="osl_foot"/>
@@ -661,7 +691,7 @@
     <plugin
       filename="gz-sim-odometry-publisher-system"
       name="gz::sim::systems::OdometryPublisher">
-      <odom_frame>odom</odom_frame>
+      <odom_frame>world</odom_frame>
       <robot_base_frame>base_link</robot_base_frame>
       <odom_topic>oslsim/odom</odom_topic>
       <tf_topic>/model/oslsim/tf</tf_topic>
