@@ -1,0 +1,6 @@
+{
+  "package_name": "pid_tune",
+  "non_idl_tuples": [
+    "/home/hari-prasad-gajurel/Our_control/leg_control/src/pid_tune:msg/PidTune.msg"
+  ]
+}

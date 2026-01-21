@@ -1,0 +1,222 @@
+[0.183s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.183s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7ccfbcd823c0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7ccfbcd257f0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7ccfbcd257f0>>)
+[0.238s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.238s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.238s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.239s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.239s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.239s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.239s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/hari-prasad-gajurel/Our_control/leg_control'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['ignore', 'ignore_ament_install']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'ignore'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'ignore_ament_install'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['colcon_pkg']
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'colcon_pkg'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['colcon_meta']
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'colcon_meta'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['ros']
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'ros'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['cmake', 'python']
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'cmake'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'python'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['python_setup_py']
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'python_setup_py'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_tune) by extensions ['ignore', 'ignore_ament_install']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_tune) by extension 'ignore'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_tune) by extension 'ignore_ament_install'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_tune) by extensions ['colcon_pkg']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_tune) by extension 'colcon_pkg'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_tune) by extensions ['colcon_meta']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_tune) by extension 'colcon_meta'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_tune) by extensions ['ros']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_tune) by extension 'ros'
+[0.296s] DEBUG:colcon.colcon_core.package_identification:Package 'src/pid_tune' with type 'ros.ament_cmake' and name 'pid_tune'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_jazzy) by extensions ['ignore', 'ignore_ament_install']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_jazzy) by extension 'ignore'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_jazzy) by extension 'ignore_ament_install'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_jazzy) by extensions ['colcon_pkg']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_jazzy) by extension 'colcon_pkg'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_jazzy) by extensions ['colcon_meta']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_jazzy) by extension 'colcon_meta'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_jazzy) by extensions ['ros']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_jazzy) by extension 'ros'
+[0.298s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_jazzy' with type 'ros.ament_python' and name 'ros2_jazzy'
+[0.298s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.298s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.298s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.298s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.298s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.326s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.326s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.333s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 317 installed packages in /opt/ros/jazzy
+[0.335s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'pid_tune' build argument 'cmake_args' from command line to 'None'
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'pid_tune' build argument 'cmake_target' from command line to 'None'
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'pid_tune' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'pid_tune' build argument 'cmake_clean_cache' from command line to 'False'
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'pid_tune' build argument 'cmake_clean_first' from command line to 'False'
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'pid_tune' build argument 'cmake_force_configure' from command line to 'False'
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'pid_tune' build argument 'ament_cmake_args' from command line to 'None'
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'pid_tune' build argument 'catkin_cmake_args' from command line to 'None'
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'pid_tune' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.398s] DEBUG:colcon.colcon_core.verb:Building package 'pid_tune' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune', 'merge_install': False, 'path': '/home/hari-prasad-gajurel/Our_control/leg_control/src/pid_tune', 'symlink_install': False, 'test_result_base': None}
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'ros2_jazzy' build argument 'cmake_args' from command line to 'None'
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'ros2_jazzy' build argument 'cmake_target' from command line to 'None'
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'ros2_jazzy' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'ros2_jazzy' build argument 'cmake_clean_cache' from command line to 'False'
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'ros2_jazzy' build argument 'cmake_clean_first' from command line to 'False'
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'ros2_jazzy' build argument 'cmake_force_configure' from command line to 'False'
+[0.398s] Level 5:colcon.colcon_core.verb:set package 'ros2_jazzy' build argument 'ament_cmake_args' from command line to 'None'
+[0.399s] Level 5:colcon.colcon_core.verb:set package 'ros2_jazzy' build argument 'catkin_cmake_args' from command line to 'None'
+[0.399s] Level 5:colcon.colcon_core.verb:set package 'ros2_jazzy' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.399s] DEBUG:colcon.colcon_core.verb:Building package 'ros2_jazzy' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy', 'merge_install': False, 'path': '/home/hari-prasad-gajurel/Our_control/leg_control/src/ros2_jazzy', 'symlink_install': False, 'test_result_base': None}
+[0.399s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.400s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.400s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/hari-prasad-gajurel/Our_control/leg_control/src/pid_tune' with build type 'ament_cmake'
+[0.400s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/hari-prasad-gajurel/Our_control/leg_control/src/pid_tune'
+[0.406s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.406s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.406s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.423s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/hari-prasad-gajurel/Our_control/leg_control/src/pid_tune -DCMAKE_INSTALL_PREFIX=/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune
+[6.187s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/hari-prasad-gajurel/Our_control/leg_control/src/pid_tune -DCMAKE_INSTALL_PREFIX=/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune
+[6.189s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune -- -j8 -l8
+[10.245s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune -- -j8 -l8
+[10.263s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune
+[10.391s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pid_tune)
+[10.392s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune
+[10.400s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune' for CMake module files
+[10.402s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune' for CMake config files
+[10.403s] Level 1:colcon.colcon_core.shell:create_environment_hook('pid_tune', 'cmake_prefix_path')
+[10.403s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/cmake_prefix_path.ps1'
+[10.404s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/cmake_prefix_path.dsv'
+[10.404s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/cmake_prefix_path.sh'
+[10.405s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib'
+[10.406s] Level 1:colcon.colcon_core.shell:create_environment_hook('pid_tune', 'ld_library_path_lib')
+[10.406s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/ld_library_path_lib.ps1'
+[10.406s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/ld_library_path_lib.dsv'
+[10.407s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/ld_library_path_lib.sh'
+[10.407s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/bin'
+[10.407s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/pkgconfig/pid_tune.pc'
+[10.407s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages'
+[10.408s] Level 1:colcon.colcon_core.shell:create_environment_hook('pid_tune', 'pythonpath')
+[10.408s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/pythonpath.ps1'
+[10.408s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/pythonpath.dsv'
+[10.409s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/pythonpath.sh'
+[10.409s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/bin'
+[10.410s] INFO:colcon.colcon_core.shell:Creating package script '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/package.ps1'
+[10.411s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/package.dsv'
+[10.411s] INFO:colcon.colcon_core.shell:Creating package script '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/package.sh'
+[10.412s] INFO:colcon.colcon_core.shell:Creating package script '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/package.bash'
+[10.413s] INFO:colcon.colcon_core.shell:Creating package script '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/package.zsh'
+[10.413s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/colcon-core/packages/pid_tune)
+[10.414s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pid_tune)
+[10.414s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune' for CMake module files
+[10.415s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune' for CMake config files
+[10.416s] Level 1:colcon.colcon_core.shell:create_environment_hook('pid_tune', 'cmake_prefix_path')
+[10.416s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/cmake_prefix_path.ps1'
+[10.416s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/cmake_prefix_path.dsv'
+[10.417s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/cmake_prefix_path.sh'
+[10.418s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib'
+[10.418s] Level 1:colcon.colcon_core.shell:create_environment_hook('pid_tune', 'ld_library_path_lib')
+[10.418s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/ld_library_path_lib.ps1'
+[10.419s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/ld_library_path_lib.dsv'
+[10.419s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/ld_library_path_lib.sh'
+[10.420s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/bin'
+[10.420s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/pkgconfig/pid_tune.pc'
+[10.420s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages'
+[10.420s] Level 1:colcon.colcon_core.shell:create_environment_hook('pid_tune', 'pythonpath')
+[10.420s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/pythonpath.ps1'
+[10.421s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/pythonpath.dsv'
+[10.421s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/hook/pythonpath.sh'
+[10.422s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/bin'
+[10.423s] INFO:colcon.colcon_core.shell:Creating package script '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/package.ps1'
+[10.424s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/package.dsv'
+[10.425s] INFO:colcon.colcon_core.shell:Creating package script '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/package.sh'
+[10.425s] INFO:colcon.colcon_core.shell:Creating package script '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/package.bash'
+[10.426s] INFO:colcon.colcon_core.shell:Creating package script '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/package.zsh'
+[10.426s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/colcon-core/packages/pid_tune)
+[10.427s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/hari-prasad-gajurel/Our_control/leg_control/src/ros2_jazzy' with build type 'ament_python'
+[10.427s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_jazzy', 'ament_prefix_path')
+[10.427s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/share/ros2_jazzy/hook/ament_prefix_path.ps1'
+[10.428s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/share/ros2_jazzy/hook/ament_prefix_path.dsv'
+[10.429s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/share/ros2_jazzy/hook/ament_prefix_path.sh'
+[10.430s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[10.430s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[10.799s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/hari-prasad-gajurel/Our_control/leg_control/src/ros2_jazzy'
+[10.800s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[10.800s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[11.891s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hari-prasad-gajurel/Our_control/leg_control/src/ros2_jazzy': AMENT_PREFIX_PATH=/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ros2_jazzy build --build-base /home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/build install --record /home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/install.log --single-version-externally-managed install_data
+[12.786s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy' for CMake module files
+[12.787s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hari-prasad-gajurel/Our_control/leg_control/src/ros2_jazzy' returned '0': AMENT_PREFIX_PATH=/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ros2_jazzy build --build-base /home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/build install --record /home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/install.log --single-version-externally-managed install_data
+[12.788s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy' for CMake config files
+[12.789s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib'
+[12.790s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/bin'
+[12.790s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/pkgconfig/ros2_jazzy.pc'
+[12.790s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages'
+[12.790s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_jazzy', 'pythonpath')
+[12.791s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/share/ros2_jazzy/hook/pythonpath.ps1'
+[12.792s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/share/ros2_jazzy/hook/pythonpath.dsv'
+[12.792s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/share/ros2_jazzy/hook/pythonpath.sh'
+[12.793s] Level 1:colcon.colcon_core.environment:checking '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/bin'
+[12.793s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ros2_jazzy)
+[12.793s] INFO:colcon.colcon_core.shell:Creating package script '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/share/ros2_jazzy/package.ps1'
+[12.794s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/share/ros2_jazzy/package.dsv'
+[12.794s] INFO:colcon.colcon_core.shell:Creating package script '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/share/ros2_jazzy/package.sh'
+[12.795s] INFO:colcon.colcon_core.shell:Creating package script '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/share/ros2_jazzy/package.bash'
+[12.795s] INFO:colcon.colcon_core.shell:Creating package script '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/share/ros2_jazzy/package.zsh'
+[12.796s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/share/colcon-core/packages/ros2_jazzy)
+[12.796s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[12.797s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[12.797s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[12.797s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[12.820s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[12.820s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[12.820s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[12.844s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[12.845s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hari-prasad-gajurel/Our_control/leg_control/install/local_setup.ps1'
+[12.848s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/hari-prasad-gajurel/Our_control/leg_control/install/_local_setup_util_ps1.py'
+[12.851s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hari-prasad-gajurel/Our_control/leg_control/install/setup.ps1'
+[12.855s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hari-prasad-gajurel/Our_control/leg_control/install/local_setup.sh'
+[12.856s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/hari-prasad-gajurel/Our_control/leg_control/install/_local_setup_util_sh.py'
+[12.857s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hari-prasad-gajurel/Our_control/leg_control/install/setup.sh'
+[12.859s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hari-prasad-gajurel/Our_control/leg_control/install/local_setup.bash'
+[12.859s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hari-prasad-gajurel/Our_control/leg_control/install/setup.bash'
+[12.861s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hari-prasad-gajurel/Our_control/leg_control/install/local_setup.zsh'
+[12.862s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hari-prasad-gajurel/Our_control/leg_control/install/setup.zsh'

@@ -1,0 +1,24 @@
+{
+  "package_name": "pid_tune",
+  "output_dir": "/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune/rosidl_generator_py/pid_tune",
+  "template_dir": "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource",
+  "idl_tuples": [
+    "/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune/rosidl_adapter/pid_tune:msg/PidTune.idl"
+  ],
+  "target_dependencies": [
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py",
+    "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_generator_py/__init__.py",
+    "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_generator_py/generate_py_impl.py",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_action_pkg_typesupport_entry_point.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_action.py.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_idl_pkg_typesupport_entry_point.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_idl_support.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_idl.py.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_msg_pkg_typesupport_entry_point.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_msg_support.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_msg.py.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_srv_pkg_typesupport_entry_point.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_srv.py.em",
+    "/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune/rosidl_adapter/pid_tune/msg/PidTune.idl"
+  ]
+}

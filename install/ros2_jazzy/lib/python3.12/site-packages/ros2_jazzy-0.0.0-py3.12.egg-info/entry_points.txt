@@ -1,0 +1,5 @@
+[console_scripts]
+loadcell = ros2_jazzy.loadcell:main
+oslsim_controller = ros2_jazzy.controller:main
+oslsim_pid_tuner = ros2_jazzy.tuner:main
+oslsim_walker = ros2_jazzy.walk:main

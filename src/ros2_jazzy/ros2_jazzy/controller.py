@@ -62,7 +62,7 @@ class JointCmds:
         self.ki_ankle=float(data.ki)*0.01
 
     def osl_knee_pose_cb(self, data):
-        temp = [data.orientation.x, data.orientation.y, data.orientation.z, data.orientation.w]
+        temp = [data.orientation.x, data.orientation.y, data.orientation.z, data.orientation.w, ]
         (roll, pitch, yaw) = euler_from_quaternion(temp)
         self.osl_knee_pose = -1.0 * pitch        
 
