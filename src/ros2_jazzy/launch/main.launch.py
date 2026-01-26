@@ -20,6 +20,8 @@ def generate_launch_description():
         value_type=str
     )
 
+    world_path = os.path.join(oslsim_share,'worlds','main.world')
+
     # Gazebo launch
     ros_gz_sim = get_package_share_directory('ros_gz_sim')
     gz_launch = IncludeLaunchDescription(
@@ -33,7 +35,7 @@ def generate_launch_description():
             '-name', 'oslsim',
             '-string', Command(['xacro ', os.path.join(oslsim_share, 'urdf/newoslsim.xacro'), 
                                 ' mesh_dir:=', os.path.join(oslsim_share,)]),
-            '-x', '0', '-y', '0', '-z', '1.1'
+            '-x', '0', '-y', '0.005', '-z', '0.89'
         ],
         output='screen'
     )
@@ -45,17 +47,38 @@ def generate_launch_description():
         arguments=['joint_state_broadcaster'],
     )
 
-    leg_controller_spawner = Node(
-        package='controller_manager',
-        executable='spawner',
-        arguments=[
-            'leg_controller',
-            '--param-file',
-            robot_controllers,
-            '--controller-ros-args',
-            '-r /leg_controller/tf_odometry:=/tf',
-        ],
-    )
+    # leg_controller_spawner = Node(
+    #     package='controller_manager',
+    #     executable='spawner',
+    #     arguments=[
+    #         'leg_controller',
+    #         '--param-file',
+    #         robot_controllers,
+    #         '--controller-ros-args',
+    #         '-r /leg_controller/tf_odometry:=/tf',
+    #     ],
+    # )
+
+    joint_controllers = [
+    'hip_position_controller',
+    'osl_hip_position_controller',
+    'knee_position_controller',
+    'osl_knee_controller',
+    'ankle_position_controller',
+    'osl_ankle_controller'
+    ]
+
+    # Create a list to hold the spawner nodes
+    controller_spawners = []
+
+    for controller in joint_controllers:
+        controller_spawners.append(
+            Node(
+                package='controller_manager',
+                executable='spawner',
+                arguments=[controller],
+            )
+        )
 
     bridge = Node(
         package='ros_gz_bridge',
@@ -156,7 +179,7 @@ def generate_launch_description():
         RegisterEventHandler(
             event_handler=OnProcessExit(
                 target_action=joint_state_broadcaster_spawner,
-                on_exit=[leg_controller_spawner],
+                on_exit=controller_spawners,
             )
         ),
         urdf_spawner,

@@ -5,10 +5,46 @@ controller_manager:
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-    # leg_controller:
-    #   type: effort_controllers/JointGroupEffortController
+    # You MUST list them here first
+    hip_position_controller:
+      type: position_controllers/JointGroupPositionController
+    osl_hip_position_controller:
+      type: position_controllers/JointGroupPositionController
+    knee_position_controller:
+      type: position_controllers/JointGroupPositionController
+    osl_knee_controller:
+      type: effort_controllers/JointGroupEffortController
+    ankle_position_controller:
+      type: position_controllers/JointGroupPositionController
+    osl_ankle_controller:
+      type: effort_controllers/JointGroupEffortController
 
-leg_controller:
+hip_position_controller:
   ros__parameters:
-    type: effort_controllers/JointGroupEffortController
-    joints: ['hip','osl_hip','knee', 'osl_knee', 'ankle','osl_ankle']
+    joints: 
+    - hip 
+
+osl_hip_position_controller:
+  ros__parameters:
+    joints: 
+    - osl_hip
+
+knee_position_controller:
+  ros__parameters:
+    joints: 
+    - knee
+
+osl_knee_controller:
+  ros__parameters:
+    joints: 
+    - osl_knee
+
+ankle_position_controller:
+  ros__parameters:
+    joints: 
+    - ankle
+
+osl_ankle_controller:
+  ros__parameters:
+    joints: 
+    - osl_ankle
