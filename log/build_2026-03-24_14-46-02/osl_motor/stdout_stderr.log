@@ -1,0 +1,40 @@
+running egg_info
+creating ../../build/osl_motor/osl_motor.egg-info
+writing ../../build/osl_motor/osl_motor.egg-info/PKG-INFO
+writing dependency_links to ../../build/osl_motor/osl_motor.egg-info/dependency_links.txt
+writing entry points to ../../build/osl_motor/osl_motor.egg-info/entry_points.txt
+writing requirements to ../../build/osl_motor/osl_motor.egg-info/requires.txt
+writing top-level names to ../../build/osl_motor/osl_motor.egg-info/top_level.txt
+writing manifest file '../../build/osl_motor/osl_motor.egg-info/SOURCES.txt'
+reading manifest file '../../build/osl_motor/osl_motor.egg-info/SOURCES.txt'
+writing manifest file '../../build/osl_motor/osl_motor.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/build
+creating /home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/build/lib
+creating /home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/build/lib/osl_motor
+copying osl_motor/motor_sim.py -> /home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/build/lib/osl_motor
+copying osl_motor/__init__.py -> /home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/build/lib/osl_motor
+running install
+running install_lib
+creating /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages/osl_motor
+copying /home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/build/lib/osl_motor/motor_sim.py -> /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages/osl_motor
+copying /home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/build/lib/osl_motor/__init__.py -> /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages/osl_motor
+byte-compiling /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages/osl_motor/motor_sim.py to motor_sim.cpython-312.pyc
+byte-compiling /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages/osl_motor/__init__.py to __init__.cpython-312.pyc
+running install_data
+creating /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/share/ament_index
+creating /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/share/ament_index/resource_index
+creating /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/share/ament_index/resource_index/packages
+copying resource/osl_motor -> /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/share/ament_index/resource_index/packages
+copying package.xml -> /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/share/osl_motor
+creating /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/share/osl_motor/launch
+copying launch/motor_sim.launch.py -> /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/share/osl_motor/launch
+creating /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/share/osl_motor/config
+copying config/ankle_motor.yaml -> /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/share/osl_motor/config
+copying config/knee_motor.yaml -> /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/share/osl_motor/config
+running install_egg_info
+Copying ../../build/osl_motor/osl_motor.egg-info to /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages/osl_motor-0.0.0-py3.12.egg-info
+running install_scripts
+Installing motor_sim script to /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/osl_motor
+writing list of installed files to '/home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/install.log'

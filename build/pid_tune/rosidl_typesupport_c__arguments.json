@@ -1,0 +1,17 @@
+{
+  "package_name": "pid_tune",
+  "output_dir": "/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune/rosidl_typesupport_c/pid_tune",
+  "template_dir": "/opt/ros/jazzy/share/rosidl_typesupport_c/resource",
+  "idl_tuples": [
+    "/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune/rosidl_adapter/pid_tune:msg/PidTune.idl"
+  ],
+  "target_dependencies": [
+    "/opt/ros/jazzy/lib/rosidl_typesupport_c/rosidl_typesupport_c",
+    "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_typesupport_c/__init__.py",
+    "/opt/ros/jazzy/share/rosidl_typesupport_c/resource/action__type_support.c.em",
+    "/opt/ros/jazzy/share/rosidl_typesupport_c/resource/idl__type_support.cpp.em",
+    "/opt/ros/jazzy/share/rosidl_typesupport_c/resource/msg__type_support.cpp.em",
+    "/opt/ros/jazzy/share/rosidl_typesupport_c/resource/srv__type_support.cpp.em",
+    "/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune/rosidl_adapter/pid_tune/msg/PidTune.idl"
+  ]
+}

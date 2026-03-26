@@ -1,0 +1,4 @@
+source;share/pid_tune/environment/ament_prefix_path.sh
+source;share/pid_tune/environment/library_path.sh
+source;share/pid_tune/environment/path.sh
+source;share/pid_tune/environment/pythonpath.sh

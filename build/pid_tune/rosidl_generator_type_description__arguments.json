@@ -1,0 +1,7 @@
+{
+  "package_name": "pid_tune",
+  "output_dir": "/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune/rosidl_generator_type_description/pid_tune",
+  "idl_tuples": [
+    "/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune/rosidl_adapter/pid_tune:msg/PidTune.idl"
+  ]
+}

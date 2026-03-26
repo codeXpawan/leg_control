@@ -1,0 +1,2 @@
+[console_scripts]
+motor_sim = osl_motor.motor_sim:main

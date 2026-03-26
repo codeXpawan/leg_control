@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../build/osl_motor/osl_motor.egg-info/PKG-INFO
+../../build/osl_motor/osl_motor.egg-info/SOURCES.txt
+../../build/osl_motor/osl_motor.egg-info/dependency_links.txt
+../../build/osl_motor/osl_motor.egg-info/entry_points.txt
+../../build/osl_motor/osl_motor.egg-info/requires.txt
+../../build/osl_motor/osl_motor.egg-info/top_level.txt
+../../build/osl_motor/osl_motor.egg-info/zip-safe
+config/ankle_motor.yaml
+config/knee_motor.yaml
+launch/motor_sim.launch.py
+osl_motor/__init__.py
+osl_motor/motor_sim.py
+resource/osl_motor

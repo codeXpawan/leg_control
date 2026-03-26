@@ -25,7 +25,7 @@ setup(
         (os.path.join('share', package_name, 'worlds'),
             glob('worlds/*')),
     ],
-    install_requires=['setuptools'],
+    install_requires=['setuptools', 'numpy', 'pyyaml'],
     zip_safe=True,
     maintainer='pika',
     maintainer_email='pika@todo.todo',
