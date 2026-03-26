@@ -1,34 +1,32 @@
-<?xml version="1.0"?>
-<robot name="oslsim" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:arg name="mesh_dir" default="package://ros2_jazzy"/>
+<robot xmlns:ns0="http://www.ros.org/wiki/xacro" name="oslsim">
+    <ns0:arg name="mesh_dir" default="package://ros2_jazzy" />
     
-  <link name="world"/>
+  <link name="world" />
   <link name="base_link">
     <inertial>
-      <origin rpy="0.0 0 0" xyz="0 0 0"/>
+      <origin rpy="0.0 0 0" xyz="0 0 0" />
       <mass value="0.00001" />
-      <inertia ixx="1.0e-07" ixy="0.0" ixz="0.0" iyy="1.0e-07" iyz="0.0" izz="1.0e-07"/>
+      <inertia ixx="1.0e-07" ixy="0.0" ixz="0.0" iyy="1.0e-07" iyz="0.0" izz="1.0e-07" />
     </inertial>
   </link>
   
   <joint name="base_link_joint" type="fixed">
     <parent link="world" />
       <child link="base_link" />
-      <origin xyz="0 0 0.05" rpy="0 0 0"/>
+      <origin xyz="0 0 0.15" rpy="0 0 0" />
   </joint>
 
   <link name="slider">
-    <!-- <visual>
-    </visual> -->
+    
     <inertial>
-        <origin rpy="0.0 0 0" xyz="0 0 0"/>
+        <origin rpy="0.0 0 0" xyz="0 0 0" />
         <mass value="0.001" />
-        <inertia ixx="1.0e-07" ixy="0.0" ixz="0.0" iyy="1.0e-07" iyz="0.0" izz="1.0e-07"/>
+        <inertia ixx="1.0e-07" ixy="0.0" ixz="0.0" iyy="1.0e-07" iyz="0.0" izz="1.0e-07" />
     </inertial>
     <collision>
-        <origin rpy="0.0 0 0" xyz="0 0 0"/>
+        <origin rpy="0.0 0 0" xyz="0 0 0" />
         <geometry>
-            <box size="0.25 0.25 0.01"/>
+            <box size="0.25 0.25 0.01" />
         </geometry>
     </collision>
   </link>
@@ -42,19 +40,19 @@
   </gazebo>
 
   <joint name="slider_joint" type="prismatic">
-      <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0 0 0" rpy="0.0 0.0 0.0" />
       <parent link="base_link" />
       <child link="slider" />
       <axis xyz="1 0 0" />
       <limit effort="1" lower="-10.0" upper="100.0" velocity="1" />
-      <dynamics damping="0.05" friction="0.1"/>
+      <dynamics damping="0.05" friction="0.1" />
   </joint>
 
   <link name="entity">
       <inertial>
-            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <origin rpy="0.0 0 0" xyz="0 0 0" />
             <mass value="0.1" />
-            <inertia ixx="4.16666666667e-05" ixy="0.0" ixz="0.0" iyy="4.16666666667e-05" iyz="0.0" izz="4.16666666667e-05"/>
+            <inertia ixx="4.16666666667e-05" ixy="0.0" ixz="0.0" iyy="4.16666666667e-05" iyz="0.0" izz="4.16666666667e-05" />
         </inertial>
   </link>
 
@@ -67,26 +65,17 @@
   </gazebo>
 
   <joint name="entity_joint" type="fixed">
-      <parent link="slider"/>
-      <child link="entity"/>
-      <origin xyz="0 0 -0.05" rpy="0 0 0"/>
+      <parent link="slider" />
+      <child link="entity" />
+      <origin xyz="0 0 -0.05" rpy="0 0 0" />
   </joint>
 
 
   <link name="body">
     <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0.1" />
-      <inertia
-        ixx="0.001"
-        ixy="0"
-        ixz="0"
-        iyy="0.001"
-        iyz="0"
-        izz="0.001" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.1" />
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
     </inertial>
   </link>
 
@@ -98,32 +87,20 @@
   </gazebo>
 
   <joint name="root_joint" type="fixed">
-    <parent link="entity"/>
-    <child link="body"/>
+    <parent link="entity" />
+    <child link="body" />
   </joint>  
 
   <link name="thigh">
     <inertial>
-      <origin
-        xyz="0.0079 0.105 -0.18514"
-        rpy="1.5708 0 0" />
-      <mass
-        value="0.55797" />
-      <inertia
-        ixx="0.0451"
-        ixy="-0.0023863"
-        ixz="0.00041503"
-        iyy="0.017843"
-        iyz="-0.00079008"
-        izz="0.046937" />
+      <origin xyz="0.0079 0.105 -0.18514" rpy="1.5708 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0451" ixy="-0.0023863" ixz="0.00041503" iyy="0.017843" iyz="-0.00079008" izz="0.046937" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 -0.004"
-        rpy="0 0 0" />
+      <origin xyz="0 0 -0.004" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="$(arg mesh_dir)/meshes/thigh.dae" />
+        <mesh filename="$(arg mesh_dir)/meshes/thigh.dae" />
       </geometry>
       <material name="">
         <pbr>
@@ -134,11 +111,9 @@
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0.0079 0.105 -0.18514"
-        rpy="1.5708 0 0" />
+      <origin xyz="0.0079 0.105 -0.18514" rpy="1.5708 0 0" />
       <geometry>
-        <box size="0.15 0.3 0.15"/>
+        <box size="0.01 0.01 0.01" />
       </geometry>
     </collision>
   </link>
@@ -151,37 +126,25 @@
   </gazebo>
 
   <joint name="hip" type="revolute">
-    <parent link="body"/>
-    <child link="thigh"/>
+    <parent link="body" />
+    <child link="thigh" />
     <origin xyz="-0.03 -0.015 0" rpy="0 0 0" />
     <axis xyz="-0.03 1 0" />
-    <dynamics damping="0.5" friction="0.5"/>
+    <dynamics damping="0.5" friction="0.5" />
     <limit effort="1.0" velocity="100" lower="-1.57" upper="1.57" />
   </joint>
 
 
     <link name="socket">
     <inertial>
-      <origin
-        xyz="0.0149 -0.105 -0.18907"
-        rpy="1.5708 0 0" />
-      <mass
-        value="0.55993" />
-      <inertia
-        ixx="0.045555"
-        ixy="-0.0028683"
-        ixz="-0.00027507"
-        iyy="0.018107"
-        iyz="0.0020012"
-        izz="0.04735" />
+      <origin xyz="0.0149 -0.105 -0.18907" rpy="1.5708 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.045555" ixy="-0.0028683" ixz="-0.00027507" iyy="0.018107" iyz="0.0020012" izz="0.04735" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="$(arg mesh_dir)/meshes/socket.dae" />
+        <mesh filename="$(arg mesh_dir)/meshes/socket.dae" />
       </geometry>
       <material name="">
         <pbr>
@@ -192,11 +155,9 @@
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0.0149 -0.105 -0.18907"
-        rpy="1.5708 0 0" />
+      <origin xyz="0.0149 -0.105 -0.18907" rpy="1.5708 0 0" />
       <geometry>
-        <box size="0.15 0.3 0.15"/>
+        <box size="0.01 0.01 0.01" />
       </geometry>
     </collision>
   </link>
@@ -209,36 +170,24 @@
   </gazebo>
 
   <joint name="osl_hip" type="revolute">
-    <parent link="body"/>
-    <child link="socket"/>
+    <parent link="body" />
+    <child link="socket" />
     <origin xyz="0 0.015 0" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <dynamics damping="0.5" friction="0.5"/>
+    <dynamics damping="0.5" friction="0.5" />
     <limit effort="1.0" velocity="100" lower="-1.57" upper="1.57" />
   </joint>
 
   <link name="shin">
     <inertial>
-      <origin
-        xyz="0.00071104 -0.14671 -0.059447"
-        rpy="0 0 0" />
-      <mass
-        value="0.1" />
-      <inertia
-        ixx="0.00092445"
-        ixy="-1.5017E-05"
-        ixz="-2.9597E-06"
-        iyy="0.00064852"
-        iyz="1.2705E-05"
-        izz="0.0013496" />
+      <origin xyz="0.00071104 -0.14671 -0.059447" rpy="0 0 0" />
+      <mass value="3.0" />
+      <inertia ixx="0.00092445" ixy="-1.5017E-05" ixz="-2.9597E-06" iyy="0.00064852" iyz="1.2705E-05" izz="0.0013496" />
     </inertial>
     <visual>
-      <origin
-        xyz="0.006 0.01 0.006"
-        rpy="0 0 0" />
+      <origin xyz="0.006 0.01 0.006" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="$(arg mesh_dir)/meshes/shin.dae" />
+        <mesh filename="$(arg mesh_dir)/meshes/shin.dae" />
       </geometry>
       <material name="">
         <pbr>
@@ -249,11 +198,9 @@
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0.00071104 -0.14671 -0.059447"
-        rpy="0 0 0" />
+      <origin xyz="0.00071104 -0.14671 -0.059447" rpy="0 0 0" />
       <geometry>
-        <box size="0.1 0.35 0.1"/>
+        <box size="0.01 0.01 0.01" />
       </geometry>
     </collision>
   </link>
@@ -265,43 +212,25 @@
       <mu2>0.5</mu2>  
   </gazebo>
 
-  <joint name="knee"
-    type="revolute">
-    <origin
-      xyz="-0.0073766 0.057865 -0.4427"
-      rpy="1.5708 0 0" />
-    <parent
-      link="thigh" />
-    <child
-      link="shin" />
-    <axis
-      xyz="0 0 1" />
-    <dynamics damping="0.5" friction="0.5"/>
+  <joint name="knee" type="revolute">
+    <origin xyz="-0.0073766 0.057865 -0.4427" rpy="1.5708 0 0" />
+    <parent link="thigh" />
+    <child link="shin" />
+    <axis xyz="0 0 1" />
+    <dynamics damping="0.5" friction="0.5" />
     <limit effort="1.0" velocity="100" lower="-1.57" upper="1.57" />      
   </joint>
 
   <link name="osl_shank">
     <inertial>
-      <origin
-        xyz="0.00071137 -0.14671 0.059447"
-        rpy="0 0 0" />
-      <mass
-        value="0.1" />
-      <inertia
-        ixx="0.00092446"
-        ixy="-1.5017E-05"
-        ixz="2.9586E-06"
-        iyy="0.00064852"
-        iyz="-1.2701E-05"
-        izz="0.0013496" />
+      <origin xyz="0.00071137 -0.14671 0.059447" rpy="0 0 0" />
+      <mass value="3.0" />
+      <inertia ixx="0.00092446" ixy="-1.5017E-05" ixz="2.9586E-06" iyy="0.00064852" iyz="-1.2701E-05" izz="0.0013496" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="$(arg mesh_dir)/meshes/osl_shank.dae" />
+        <mesh filename="$(arg mesh_dir)/meshes/osl_shank.dae" />
       </geometry>
       <material name="">
         <pbr>
@@ -312,11 +241,9 @@
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0.00071137 -0.14671 0.059447"
-        rpy="0 0 0" />
+      <origin xyz="0.00071137 -0.14671 0.059447" rpy="0 0 0" />
       <geometry>
-        <box size="0.1 0.35 0.1"/>
+        <box size="0.01 0.01 0.01" />
       </geometry>
     </collision>
   </link>
@@ -326,7 +253,7 @@
     <kd>1000.0</kd>
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
-    <!-- Native gz-sim IMU sensor -->
+    
     <sensor name="osl_shank_imu" type="imu">
       <always_on>true</always_on>
       <update_rate>50</update_rate>
@@ -341,18 +268,12 @@
 
 
 
-<joint name="osl_knee"
-    type="revolute">
-    <origin
-      xyz="-0.0073766 -0.062441 -0.4427"
-      rpy="1.5708 0 0" />
-    <parent
-      link="socket" />
-    <child
-      link="osl_shank" />
-    <axis
-      xyz="0 0 1" />
-    <dynamics damping="0.5" friction="0.5"/>
+<joint name="osl_knee" type="revolute">
+    <origin xyz="-0.0073766 -0.062441 -0.4427" rpy="1.5708 0 0" />
+    <parent link="socket" />
+    <child link="osl_shank" />
+    <axis xyz="0 0 1" />
+    <dynamics damping="0.5" friction="0.5" />
     <limit effort="200.0" velocity="100" lower="-1.57" upper="1.57" />      
   </joint>
 
@@ -360,26 +281,14 @@
 
   <link name="foot">
     <inertial>
-      <origin
-        xyz="0.029606 -0.056108 0.013102"
-        rpy="-0.175 0 0" />
-      <mass
-        value="0.01" />
-      <inertia
-        ixx="0.00051563"
-        ixy="2.5317E-06"
-        ixz="-1.6036E-06"
-        iyy="0.00049449"
-        iyz="0.0001344"
-        izz="0.0001125" />
+      <origin xyz="0.029606 -0.056108 0.013102" rpy="-0.175 0 0" />
+      <mass value="1.0" />
+      <inertia ixx="0.00051563" ixy="2.5317E-06" ixz="-1.6036E-06" iyy="0.00049449" iyz="0.0001344" izz="0.0001125" />
     </inertial>
     <visual>
-      <origin
-        xyz="-0.0035 0.02 0.024"
-        rpy="0 0 0" />
+      <origin xyz="-0.0035 0.02 0.024" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="$(arg mesh_dir)/meshes/foot.dae" />
+        <mesh filename="$(arg mesh_dir)/meshes/foot.dae" />
       </geometry>
       <material name="">
         <pbr>
@@ -388,18 +297,12 @@
           <roughness>0.4</roughness>
         </pbr>
       </material>
-      <!-- <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material> -->
+      
     </visual>
     <collision>
-      <origin
-        xyz="0.029606 -0.065 0.05"
-        rpy="0 0 0" />
+      <origin xyz="0.029606 -0.065 0.05" rpy="0 0 0" />
       <geometry>
-        <box size="0.0675 0.025 0.2"/>
+        <box size="0.0675 0.025 0.2" />
       </geometry>
       <surface>
         <friction>
@@ -431,43 +334,25 @@
       <mu2>1.0</mu2>    
   </gazebo>
 
-  <joint name="ankle"
-    type="revolute">
-    <origin
-      xyz="-0.00077967 -0.3134 -0.026811"
-      rpy="0 1.5708 0" />
-    <parent
-      link="shin" />
-    <child
-      link="foot" />
-    <axis
-      xyz="1 0 0" />
-    <dynamics damping="0.5" friction="0.5"/>      
+  <joint name="ankle" type="revolute">
+    <origin xyz="-0.00077967 -0.3134 -0.026811" rpy="0 1.5708 0" />
+    <parent link="shin" />
+    <child link="foot" />
+    <axis xyz="1 0 0" />
+    <dynamics damping="0.5" friction="0.5" />      
     <limit effort="1.0" velocity="100" lower="-1.57" upper="1.57" />      
   </joint>
 
 <link name="osl_foot">
     <inertial>
-      <origin
-        xyz="0.029606 -0.056108 0.033102"
-        rpy="0.175 -1.5708 0" />
-      <mass
-        value="0.01" />
-      <inertia
-        ixx="0.00051564"
-        ixy="-2.531E-06"
-        ixz="-1.6019E-06"
-        iyy="0.0004945"
-        iyz="-0.0001344"
-        izz="0.0001125" />
+      <origin xyz="0.029606 -0.056108 0.033102" rpy="0.175 -1.5708 0" />
+      <mass value="1.0" />
+      <inertia ixx="0.00051564" ixy="-2.531E-06" ixz="-1.6019E-06" iyy="0.0004945" iyz="-0.0001344" izz="0.0001125" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0.175 -1.5708 -3.1416" />
+      <origin xyz="0 0 0" rpy="0.175 -1.5708 -3.1416" />
       <geometry>
-        <mesh
-          filename="$(arg mesh_dir)/meshes/osl_foot.dae" />
+        <mesh filename="$(arg mesh_dir)/meshes/osl_foot.dae" />
       </geometry>
       <material name="">
         <pbr>
@@ -476,18 +361,12 @@
           <roughness>0.4</roughness>
         </pbr>
       </material>
-      <!-- <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material> -->
+      
     </visual>
     <collision>
-      <origin
-        xyz="0.03 -0.065 0.03"
-        rpy="0 -1.5708 0" />
+      <origin xyz="0.03 -0.065 0.03" rpy="0 -1.5708 0" />
       <geometry>
-        <box size="0.0675 0.025 0.2"/>
+        <box size="0.0675 0.025 0.2" />
       </geometry>
       <surface>
         <friction>
@@ -512,32 +391,26 @@
     </collision>
   </link>
 
-  <joint name="osl_ankle"
-    type="revolute">
-    <origin
-      xyz="-0.00077967 -0.3134 0.026811"
-      rpy="0 0 0" />
-    <parent
-      link="osl_shank" />
-    <child
-      link="osl_foot" />
-    <axis
-      xyz="1 0 0" />
-    <dynamics damping="0.5" friction="0.5"/>      
+  <joint name="osl_ankle" type="revolute">
+    <origin xyz="-0.00077967 -0.3134 0.026811" rpy="0 0 0" />
+    <parent link="osl_shank" />
+    <child link="osl_foot" />
+    <axis xyz="1 0 0" />
+    <dynamics damping="0.5" friction="0.5" />      
     <limit effort="200.0" velocity="100" lower="-1.57" upper="1.57" />      
   </joint>
 
 
     <link name="foot_heel">
     <inertial>
-          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <origin xyz="0 0 0" rpy="0 0 0" />
           <mass value="0.00001" />
-          <inertia ixx="1.6e-08" ixy="0.0" ixz="0.0" iyy="1.6e-08" iyz="0.0" izz="1.6e-08"/>
+          <inertia ixx="1.6e-08" ixy="0.0" ixz="0.0" iyy="1.6e-08" iyz="0.0" izz="1.6e-08" />
       </inertial>
       <collision>
-          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <origin xyz="0 0 0" rpy="0 0 0" />
           <geometry>
-              <sphere radius="0.020"/>
+              <sphere radius="0.020" />
           </geometry>
   
       </collision>
@@ -551,21 +424,21 @@
   </gazebo>
 
   <joint name="foot_heel_joint" type="fixed">
-      <parent link="foot"/>
-      <child link="foot_heel"/>
-      <origin xyz="0.03 -0.065 0" rpy="0 0 0"/>
+      <parent link="foot" />
+      <child link="foot_heel" />
+      <origin xyz="0.03 -0.065 0" rpy="0 0 0" />
   </joint>
 
   <link name="osl_foot_loadcell_link">
     <inertial>
-          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <origin xyz="0 0 0" rpy="0 0 0" />
           <mass value="0.00001" />
-          <inertia ixx="1.6e-08" ixy="0.0" ixz="0.0" iyy="1.6e-08" iyz="0.0" izz="1.6e-08"/>
+          <inertia ixx="1.6e-08" ixy="0.0" ixz="0.0" iyy="1.6e-08" iyz="0.0" izz="1.6e-08" />
       </inertial>
       <collision name="osl_foot_loadcell_link_collision_1">
-          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <origin xyz="0 0 0" rpy="0 0 0" />
           <geometry>
-              <sphere radius="0.020"/>
+              <sphere radius="0.020" />
           </geometry>
       </collision>
   </link>
@@ -578,44 +451,36 @@
   </gazebo>
 
   <joint name="osl_foot_loadcell_link_joint" type="fixed">
-      <parent link="osl_foot"/>
-      <child link="osl_foot_loadcell_link"/>
-      <origin xyz="-0.03 -0.065 0.03" rpy="0 0 0"/>
+      <parent link="osl_foot" />
+      <child link="osl_foot_loadcell_link" />
+      <origin xyz="-0.03 -0.065 0.03" rpy="0 0 0" />
   </joint>
 
   <gazebo reference="osl_foot_loadcell_link">
-    <sensor name='sensor_contact' type='contact'>
-      <!-- <always_on>true</always_on> -->
-      <!-- <update_rate>50</update_rate> -->
-      <!-- <topic>contact/foot</topic> -->
+    <sensor name="sensor_contact" type="contact">
+      
+      
+      
       <contact>
           <collision>osl_foot_loadcell_link_collision_1_collision_1</collision>
       </contact>
     </sensor>
   </gazebo>
 
-  <!-- <gazebo>
-    <plugin filename="gz-sim-touchplugin-system"
-            name="gz::sim::systems::TouchPlugin">
-        <target>gplane</target>
-        <namespace>wall</namespace>
-        <time>0.001</time>
-        <enabled>true</enabled>
-    </plugin>
-  </gazebo> -->
+  
 
 
 
   <gazebo reference="osl_foot">
-    <!-- Native gz-sim IMU sensor -->
+    
     <sensor name="osl_foot_imu" type="imu">
       <always_on>true</always_on>
       <update_rate>50</update_rate>
-      <!-- <visualize>true</visualize> -->
+      
 
       <topic>/imu/foot</topic>
 
-      <!-- <pose>0 0 0 0 0 0</pose> -->
+      
     </sensor>
 
     </gazebo>
@@ -627,36 +492,36 @@
       </hardware>
 
       <joint name="hip">
-        <command_interface name="position"/>
-        <state_interface name="position"/>
-        <state_interface name="velocity"/>
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
       </joint>
       <joint name="osl_hip">
-        <command_interface name="position"/>
-        <state_interface name="position"/>
-        <state_interface name="velocity"/>
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
       </joint>
       <joint name="knee">
-        <command_interface name="position"/>
-        <state_interface name="position"/>
-        <state_interface name="velocity"/>
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
       </joint>
       <joint name="osl_knee">
-        <command_interface name="effort"/>
-        <state_interface name="position"/>
-        <state_interface name="velocity"/>
-        <state_interface name="effort"/>
+        <command_interface name="effort" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+        <state_interface name="effort" />
       </joint>
       <joint name="ankle">
-        <command_interface name="position"/>
-        <state_interface name="position"/>
-        <state_interface name="velocity"/>
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
       </joint>
       <joint name="osl_ankle">
-        <command_interface name="effort"/>
-        <state_interface name="position"/>
-        <state_interface name="velocity"/>
-        <state_interface name="effort"/>
+        <command_interface name="effort" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+        <state_interface name="effort" />
       </joint>
     </ros2_control>
 
@@ -667,14 +532,12 @@
   </gazebo>
 
   <gazebo>
-    <plugin filename="gz-sim-imu-system"
-          name="gz::sim::systems::Imu">
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu">
     </plugin>
   </gazebo>
 
   <gazebo>
-    <plugin filename="gz-sim-touchplugin-system"
-          name="gz::sim::systems::TouchPlugin">
+    <plugin filename="gz-sim-touchplugin-system" name="gz::sim::systems::TouchPlugin">
       <target>ground_plane</target>
       <namespace>foot</namespace>
       <time>0.001</time>
@@ -683,15 +546,12 @@
   </gazebo>
 
   <gazebo>
-    <plugin filename="gz-sim-contact-system"
-        name="gz::sim::systems::Contact">
+    <plugin filename="gz-sim-contact-system" name="gz::sim::systems::Contact">
     </plugin>
   </gazebo>
 
   <gazebo>
-    <plugin
-      filename="gz-sim-odometry-publisher-system"
-      name="gz::sim::systems::OdometryPublisher">
+    <plugin filename="gz-sim-odometry-publisher-system" name="gz::sim::systems::OdometryPublisher">
       <odom_frame>world</odom_frame>
       <robot_base_frame>base_link</robot_base_frame>
       <odom_topic>oslsim/odom</odom_topic>
