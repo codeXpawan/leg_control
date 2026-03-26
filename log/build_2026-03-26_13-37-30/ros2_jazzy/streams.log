@@ -1,0 +1,27 @@
+[2.058s] Invoking command in '/home/hari-prasad-gajurel/Our_control/leg_control/src/ros2_jazzy': AMENT_PREFIX_PATH=/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor:/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy:/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ros2_jazzy build --build-base /home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/build install --record /home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/install.log --single-version-externally-managed install_data
+[2.855s] running egg_info
+[2.912s] writing ../../build/ros2_jazzy/ros2_jazzy.egg-info/PKG-INFO
+[2.913s] writing dependency_links to ../../build/ros2_jazzy/ros2_jazzy.egg-info/dependency_links.txt
+[2.914s] writing entry points to ../../build/ros2_jazzy/ros2_jazzy.egg-info/entry_points.txt
+[2.915s] writing requirements to ../../build/ros2_jazzy/ros2_jazzy.egg-info/requires.txt
+[2.915s] writing top-level names to ../../build/ros2_jazzy/ros2_jazzy.egg-info/top_level.txt
+[3.030s] reading manifest file '../../build/ros2_jazzy/ros2_jazzy.egg-info/SOURCES.txt'
+[3.033s] writing manifest file '../../build/ros2_jazzy/ros2_jazzy.egg-info/SOURCES.txt'
+[3.035s] running build
+[3.035s] running build_py
+[3.036s] copying ros2_jazzy/controller.py -> /home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/build/lib/ros2_jazzy
+[3.036s] running install
+[3.050s] running install_lib
+[3.099s] copying /home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/build/lib/ros2_jazzy/controller.py -> /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages/ros2_jazzy
+[3.100s] byte-compiling /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages/ros2_jazzy/controller.py to controller.cpython-312.pyc
+[3.104s] running install_data
+[3.107s] running install_egg_info
+[3.163s] removing '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages/ros2_jazzy-0.0.0-py3.12.egg-info' (and everything under it)
+[3.165s] Copying ../../build/ros2_jazzy/ros2_jazzy.egg-info to /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages/ros2_jazzy-0.0.0-py3.12.egg-info
+[3.168s] running install_scripts
+[3.588s] Installing loadcell script to /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/ros2_jazzy
+[3.589s] Installing oslsim_controller script to /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/ros2_jazzy
+[3.589s] Installing oslsim_pid_tuner script to /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/ros2_jazzy
+[3.590s] Installing oslsim_walker script to /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/ros2_jazzy
+[3.591s] writing list of installed files to '/home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/install.log'
+[3.705s] Invoked command in '/home/hari-prasad-gajurel/Our_control/leg_control/src/ros2_jazzy' returned '0': AMENT_PREFIX_PATH=/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor:/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy:/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ros2_jazzy build --build-base /home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/build install --record /home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/install.log --single-version-externally-managed install_data

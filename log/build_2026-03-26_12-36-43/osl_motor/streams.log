@@ -1,0 +1,21 @@
+[2.487s] Invoking command in '/home/hari-prasad-gajurel/Our_control/leg_control/src/osl_motor': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/osl_motor build --build-base /home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/build install --record /home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/install.log --single-version-externally-managed install_data
+[3.072s] running egg_info
+[3.114s] writing ../../build/osl_motor/osl_motor.egg-info/PKG-INFO
+[3.115s] writing dependency_links to ../../build/osl_motor/osl_motor.egg-info/dependency_links.txt
+[3.115s] writing entry points to ../../build/osl_motor/osl_motor.egg-info/entry_points.txt
+[3.116s] writing requirements to ../../build/osl_motor/osl_motor.egg-info/requires.txt
+[3.116s] writing top-level names to ../../build/osl_motor/osl_motor.egg-info/top_level.txt
+[3.212s] reading manifest file '../../build/osl_motor/osl_motor.egg-info/SOURCES.txt'
+[3.214s] writing manifest file '../../build/osl_motor/osl_motor.egg-info/SOURCES.txt'
+[3.214s] running build
+[3.215s] running build_py
+[3.215s] running install
+[3.230s] running install_lib
+[3.276s] running install_data
+[3.276s] running install_egg_info
+[3.327s] removing '/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages/osl_motor-0.0.0-py3.12.egg-info' (and everything under it)
+[3.328s] Copying ../../build/osl_motor/osl_motor.egg-info to /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages/osl_motor-0.0.0-py3.12.egg-info
+[3.330s] running install_scripts
+[3.655s] Installing motor_sim script to /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/osl_motor
+[3.656s] writing list of installed files to '/home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/install.log'
+[3.736s] Invoked command in '/home/hari-prasad-gajurel/Our_control/leg_control/src/osl_motor' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/osl_motor build --build-base /home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/build install --record /home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/install.log --single-version-externally-managed install_data

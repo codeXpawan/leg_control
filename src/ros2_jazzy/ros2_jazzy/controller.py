@@ -4,10 +4,8 @@ import rclpy
 from rclpy.node import Node
 
 from std_msgs.msg import Float64MultiArray
-from sensor_msgs.msg import Imu
+from sensor_msgs.msg import JointState
 from pid_tune.msg import PidTune
-
-from tf_transformations import euler_from_quaternion
 from ament_index_python.packages import get_package_share_directory
 
 import numpy as np
@@ -37,22 +35,21 @@ class JointCmds:
         self.errori_ankle = 0.0
         self.preverror_ankle = 0.0
 
-        self.kp_knee = 250 * 0.01
-        self.ki_knee = 30 * 0.01
-        self.kd_knee = 1 * 0.01
+        self.kp_knee = 300 * 0.01
+        self.ki_knee = 0 * 0.01
+        self.kd_knee = 30 * 0.01
 
-        self.kp_ankle = 250 * 0.01
-        self.ki_ankle = 30 * 0.01
-        self.kd_ankle = 0 * 0.01
+        self.kp_ankle = 300 * 0.01
+        self.ki_ankle = 0 * 0.01
+        self.kd_ankle = 30 * 0.01
 
         # Clamping parameters
         self.max_errori = 0.5    # rad-sec (integrator limit)
-        self.max_voltage = 50.0  # Nominal voltage
+        self.max_voltage = 10.0  # Nominal voltage
 
-        node.create_subscription(Imu, '/imu/osl_shank', self.osl_knee_pose_cb, 10)
-        node.create_subscription(Imu, '/imu/foot', self.osl_ankle_pose_cb, 10)
-        node.create_subscription(PidTune, '/oslsim/osl_knee/pid', self.osl_knee_pid_cb, 10)
-        node.create_subscription(PidTune, '/oslsim/osl_ankle/pid', self.osl_ankle_pid_cb, 10)
+        self.js_sub = node.create_subscription(JointState, '/joint_states', self.joint_state_cb, 10)
+        self.pid_knee_sub = node.create_subscription(PidTune, '/oslsim/osl_knee/pid', self.osl_knee_pid_cb, 10)
+        self.pid_ankle_sub = node.create_subscription(PidTune, '/oslsim/osl_ankle/pid', self.osl_ankle_pid_cb, 10)
 
     def osl_knee_pid_cb(self,data):
         self.kp_knee=float(data.kp)*0.01
@@ -64,15 +61,14 @@ class JointCmds:
         self.kd_ankle=float(data.kd)*0.01
         self.ki_ankle=float(data.ki)*0.01
 
-    def osl_knee_pose_cb(self, data):
-        temp = [data.orientation.x, data.orientation.y, data.orientation.z, data.orientation.w, ]
-        (roll, pitch, yaw) = euler_from_quaternion(temp)
-        self.osl_knee_pose = -1.0 * pitch        
+    def joint_state_cb(self, msg):
+        if 'osl_knee' in msg.name:
+            idx = msg.name.index('osl_knee')
+            self.osl_knee_pose = msg.position[idx]
 
-    def osl_ankle_pose_cb(self, data):
-        temp = [data.orientation.x, data.orientation.y, data.orientation.z, data.orientation.w]
-        (roll, pitch, yaw) = euler_from_quaternion(temp)
-        self.osl_ankle_pose = -1.0 * pitch
+        if 'osl_ankle' in msg.name:
+            idx = msg.name.index('osl_ankle')
+            self.osl_ankle_pose = msg.position[idx]
 
     def update(self, dt):
         with open(self.path + 'angles.pkl', 'rb') as f:

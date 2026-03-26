@@ -1,0 +1,385 @@
+[0.000000] (-) TimerEvent: {}
+[0.000611] (osl_motor) JobQueued: {'identifier': 'osl_motor', 'dependencies': OrderedDict()}
+[0.000773] (pid_tune) JobQueued: {'identifier': 'pid_tune', 'dependencies': OrderedDict()}
+[0.000839] (ros2_jazzy) JobQueued: {'identifier': 'ros2_jazzy', 'dependencies': OrderedDict({'osl_motor': '/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor', 'pid_tune': '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune'})}
+[0.000918] (osl_motor) JobStarted: {'identifier': 'osl_motor'}
+[0.061587] (pid_tune) JobStarted: {'identifier': 'pid_tune'}
+[0.096300] (-) TimerEvent: {}
+[0.197632] (-) TimerEvent: {}
+[0.300610] (-) TimerEvent: {}
+[0.401224] (-) TimerEvent: {}
+[0.502285] (-) TimerEvent: {}
+[0.603605] (-) TimerEvent: {}
+[0.706906] (-) TimerEvent: {}
+[0.808961] (-) TimerEvent: {}
+[0.909851] (-) TimerEvent: {}
+[1.012370] (-) TimerEvent: {}
+[1.113104] (-) TimerEvent: {}
+[1.215734] (-) TimerEvent: {}
+[1.316612] (-) TimerEvent: {}
+[1.361284] (pid_tune) JobProgress: {'identifier': 'pid_tune', 'progress': 'cmake'}
+[1.365576] (pid_tune) JobProgress: {'identifier': 'pid_tune', 'progress': 'build'}
+[1.365927] (pid_tune) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune', '--', '-j8', '-l8'], 'cwd': '/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'hari-prasad-gajurel', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/usr/share/antigravity/resources/app/extensions/git/dist/askpass.sh', 'STM32CubeMX_PATH': '/home/hari-prasad-gajurel/STM32CubeMX', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'ANTIGRAVITY_CLI_ALIAS': 'agy', 'HOME': '/home/hari-prasad-gajurel', 'CHROME_DESKTOP': 'antigravity.desktop', 'TERM_PROGRAM_VERSION': '1.107.0', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/antigravity.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/antigravity/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/antigravity/antigravity', 'MANAGERPID': '2096', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'SYSTEMD_EXEC_PID': '2386', 'BUNDLED_DEBUGPY_PATH': '/home/hari-prasad-gajurel/.antigravity/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'IM_CONFIG_CHECK_ENV': '1', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'ANTIGRAVITY_AGENT': '1', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9281', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'hari-prasad-gajurel', 'JOURNAL_STREAM': '9:22655', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'hari-prasad-gajurel', 'STM32_PRG_PATH': '/home/hari-prasad-gajurel/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'PATH': '~/.local/bin:/home/hari-prasad-gajurel/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:~/.local/bin:/home/hari-prasad-gajurel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/hari-prasad-gajurel/.antigravity/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/Eigen-Hari:@/tmp/.ICE-unix/2346,unix/Eigen-Hari:/tmp/.ICE-unix/2346', 'INVOCATION_ID': 'da1d2078efe94c74b42a3661553e9929', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'wayland', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/hari-prasad-gajurel/.antigravity/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-d3fbca9f2357f0bf.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/hari-prasad-gajurel/.config/Antigravity/User/workspaceStorage/c11a18dd5834a5bf9a59e68a46bb377f/ms-python.python/pythonrc.py', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.OKFXM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SBX_CHROME_API_RQ': '1', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-78b3f9a067.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy:/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune:/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy:/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor:/opt/ros/jazzy'}), 'shell': False}
+[1.417625] (-) TimerEvent: {}
+[1.518383] (-) TimerEvent: {}
+[1.620607] (-) TimerEvent: {}
+[1.721605] (-) TimerEvent: {}
+[1.808858] (pid_tune) StdoutLine: {'line': b'[  2%] Built target pid_tune_msg__rosidl_generator_type_description\n'}
+[1.821800] (-) TimerEvent: {}
+[1.914788] (pid_tune) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_copy_pid_tune\n'}
+[1.922695] (-) TimerEvent: {}
+[1.994926] (pid_tune) StdoutLine: {'line': b'[ 17%] Built target pid_tune_msg__rosidl_generator_c\n'}
+[1.999429] (pid_tune) StdoutLine: {'line': b'[ 20%] Built target pid_tune_msg__cpp\n'}
+[2.024222] (-) TimerEvent: {}
+[2.125740] (-) TimerEvent: {}
+[2.170828] (pid_tune) StdoutLine: {'line': b'[ 29%] Built target pid_tune_msg__rosidl_typesupport_c\n'}
+[2.223381] (pid_tune) StdoutLine: {'line': b'[ 38%] Built target pid_tune_msg__rosidl_typesupport_introspection_c\n'}
+[2.227127] (-) TimerEvent: {}
+[2.249637] (pid_tune) StdoutLine: {'line': b'[ 47%] Built target pid_tune_msg__rosidl_typesupport_fastrtps_c\n'}
+[2.327349] (-) TimerEvent: {}
+[2.337997] (pid_tune) StdoutLine: {'line': b'[ 55%] Built target pid_tune_msg__rosidl_typesupport_fastrtps_cpp\n'}
+[2.377698] (pid_tune) StdoutLine: {'line': b'[ 64%] Built target pid_tune_msg__rosidl_typesupport_cpp\n'}
+[2.383370] (pid_tune) StdoutLine: {'line': b'[ 73%] Built target pid_tune_msg__rosidl_typesupport_introspection_cpp\n'}
+[2.427579] (-) TimerEvent: {}
+[2.530825] (-) TimerEvent: {}
+[2.540326] (pid_tune) StdoutLine: {'line': b'[ 73%] Built target pid_tune_msg\n'}
+[2.631213] (-) TimerEvent: {}
+[2.686706] (pid_tune) StdoutLine: {'line': b'[ 76%] Built target pid_tune_msg__py\n'}
+[2.734919] (-) TimerEvent: {}
+[2.835769] (-) TimerEvent: {}
+[2.851759] (pid_tune) StdoutLine: {'line': b'[ 82%] Built target pid_tune_msg__rosidl_generator_py\n'}
+[2.936742] (-) TimerEvent: {}
+[3.015758] (pid_tune) StdoutLine: {'line': b'[ 88%] Built target pid_tune_s__rosidl_typesupport_fastrtps_c\n'}
+[3.037984] (-) TimerEvent: {}
+[3.079009] (pid_tune) StdoutLine: {'line': b'[ 94%] Built target pid_tune_s__rosidl_typesupport_c\n'}
+[3.089892] (pid_tune) StdoutLine: {'line': b'[100%] Built target pid_tune_s__rosidl_typesupport_introspection_c\n'}
+[3.140617] (-) TimerEvent: {}
+[3.241797] (-) TimerEvent: {}
+[3.301810] (pid_tune) StdoutLine: {'line': b'running egg_info\n'}
+[3.342152] (-) TimerEvent: {}
+[3.400793] (pid_tune) StdoutLine: {'line': b'writing pid_tune.egg-info/PKG-INFO\n'}
+[3.405284] (pid_tune) StdoutLine: {'line': b'writing dependency_links to pid_tune.egg-info/dependency_links.txt\n'}
+[3.409651] (pid_tune) StdoutLine: {'line': b'writing top-level names to pid_tune.egg-info/top_level.txt\n'}
+[3.445180] (-) TimerEvent: {}
+[3.547820] (-) TimerEvent: {}
+[3.649586] (-) TimerEvent: {}
+[3.673091] (pid_tune) StdoutLine: {'line': b"reading manifest file 'pid_tune.egg-info/SOURCES.txt'\n"}
+[3.675661] (pid_tune) StdoutLine: {'line': b"writing manifest file 'pid_tune.egg-info/SOURCES.txt'\n"}
+[3.749789] (-) TimerEvent: {}
+[3.854615] (-) TimerEvent: {}
+[3.919841] (pid_tune) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_pid_tune_egg\n'}
+[3.955646] (-) TimerEvent: {}
+[3.996416] (pid_tune) CommandEnded: {'returncode': 0}
+[4.006101] (pid_tune) JobProgress: {'identifier': 'pid_tune', 'progress': 'install'}
+[4.055903] (-) TimerEvent: {}
+[4.068094] (pid_tune) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune'], 'cwd': '/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'hari-prasad-gajurel', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/usr/share/antigravity/resources/app/extensions/git/dist/askpass.sh', 'STM32CubeMX_PATH': '/home/hari-prasad-gajurel/STM32CubeMX', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'ANTIGRAVITY_CLI_ALIAS': 'agy', 'HOME': '/home/hari-prasad-gajurel', 'CHROME_DESKTOP': 'antigravity.desktop', 'TERM_PROGRAM_VERSION': '1.107.0', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/antigravity.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/antigravity/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/antigravity/antigravity', 'MANAGERPID': '2096', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'SYSTEMD_EXEC_PID': '2386', 'BUNDLED_DEBUGPY_PATH': '/home/hari-prasad-gajurel/.antigravity/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'IM_CONFIG_CHECK_ENV': '1', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'ANTIGRAVITY_AGENT': '1', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9281', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'hari-prasad-gajurel', 'JOURNAL_STREAM': '9:22655', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'hari-prasad-gajurel', 'STM32_PRG_PATH': '/home/hari-prasad-gajurel/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'PATH': '~/.local/bin:/home/hari-prasad-gajurel/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:~/.local/bin:/home/hari-prasad-gajurel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/hari-prasad-gajurel/.antigravity/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/Eigen-Hari:@/tmp/.ICE-unix/2346,unix/Eigen-Hari:/tmp/.ICE-unix/2346', 'INVOCATION_ID': 'da1d2078efe94c74b42a3661553e9929', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'wayland', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/hari-prasad-gajurel/.antigravity/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-d3fbca9f2357f0bf.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/hari-prasad-gajurel/.config/Antigravity/User/workspaceStorage/c11a18dd5834a5bf9a59e68a46bb377f/ms-python.python/pythonrc.py', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.OKFXM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SBX_CHROME_API_RQ': '1', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-78b3f9a067.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy:/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune:/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/hari-prasad-gajurel/Our_control/leg_control/build/pid_tune', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy:/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor:/opt/ros/jazzy'}), 'shell': False}
+[4.135776] (pid_tune) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[4.140603] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/ament_index/resource_index/rosidl_interfaces/pid_tune\n'}
+[4.144334] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/msg/PidTune.json\n'}
+[4.151299] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune\n'}
+[4.152089] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg\n'}
+[4.152317] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/pid_tune.h\n'}
+[4.158058] (-) TimerEvent: {}
+[4.158637] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail\n'}
+[4.159383] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__struct.h\n'}
+[4.159893] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__type_support.h\n'}
+[4.160872] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__type_support.c\n'}
+[4.161244] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__description.c\n'}
+[4.161631] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__functions.c\n'}
+[4.162011] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__functions.h\n'}
+[4.162409] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/rosidl_generator_c__visibility_control.h\n'}
+[4.163255] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/environment/library_path.sh\n'}
+[4.163692] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/environment/library_path.dsv\n'}
+[4.164203] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/libpid_tune__rosidl_generator_c.so\n'}
+[4.164657] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune\n'}
+[4.165016] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg\n'}
+[4.165399] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail\n'}
+[4.165812] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__rosidl_typesupport_fastrtps_c.h\n'}
+[4.166347] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[4.166766] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/libpid_tune__rosidl_typesupport_fastrtps_c.so\n'}
+[4.167354] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune\n'}
+[4.167721] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg\n'}
+[4.168296] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail\n'}
+[4.169181] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__type_support.c\n'}
+[4.169856] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__rosidl_typesupport_introspection_c.h\n'}
+[4.172092] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[4.174884] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/libpid_tune__rosidl_typesupport_introspection_c.so\n'}
+[4.179534] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/libpid_tune__rosidl_typesupport_c.so\n'}
+[4.182168] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune\n'}
+[4.182566] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg\n'}
+[4.182911] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail\n'}
+[4.184040] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__struct.hpp\n'}
+[4.189010] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__type_support.hpp\n'}
+[4.189552] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__traits.hpp\n'}
+[4.189873] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__builder.hpp\n'}
+[4.190147] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/pid_tune.hpp\n'}
+[4.190428] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[4.190799] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune\n'}
+[4.191085] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg\n'}
+[4.191353] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail\n'}
+[4.191692] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[4.191965] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/dds_fastrtps\n'}
+[4.201949] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[4.203553] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/libpid_tune__rosidl_typesupport_fastrtps_cpp.so\n'}
+[4.204217] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune\n'}
+[4.204650] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg\n'}
+[4.204979] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail\n'}
+[4.205284] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__rosidl_typesupport_introspection_cpp.hpp\n'}
+[4.206683] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/include/pid_tune/pid_tune/msg/detail/pid_tune__type_support.cpp\n'}
+[4.207542] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/libpid_tune__rosidl_typesupport_introspection_cpp.so\n'}
+[4.208012] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/libpid_tune__rosidl_typesupport_cpp.so\n'}
+[4.208419] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/environment/pythonpath.sh\n'}
+[4.208822] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/environment/pythonpath.dsv\n'}
+[4.209131] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune-0.0.0-py3.12.egg-info\n'}
+[4.210163] (pid_tune) StdoutLine: {'line': b'-- Installing: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune-0.0.0-py3.12.egg-info/dependency_links.txt\n'}
+[4.210528] (pid_tune) StdoutLine: {'line': b'-- Installing: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune-0.0.0-py3.12.egg-info/top_level.txt\n'}
+[4.210829] (pid_tune) StdoutLine: {'line': b'-- Installing: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune-0.0.0-py3.12.egg-info/PKG-INFO\n'}
+[4.211051] (pid_tune) StdoutLine: {'line': b'-- Installing: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune-0.0.0-py3.12.egg-info/SOURCES.txt\n'}
+[4.211246] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune\n'}
+[4.212179] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune/pid_tune_s__rosidl_typesupport_introspection_c.so\n'}
+[4.212502] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune/_pid_tune_s.ep.rosidl_typesupport_c.c\n'}
+[4.212769] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune/pid_tune_s__rosidl_typesupport_fastrtps_c.so\n'}
+[4.213010] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune/_pid_tune_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[4.213342] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune/pid_tune_s__rosidl_typesupport_c.so\n'}
+[4.213737] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune/__init__.py\n'}
+[4.214241] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune/msg\n'}
+[4.214662] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune/msg/_pid_tune.py\n'}
+[4.214928] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune/msg/__init__.py\n'}
+[4.215206] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune/msg/_pid_tune_s.c\n'}
+[4.215525] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune/_pid_tune_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[4.258234] (-) TimerEvent: {}
+[4.361012] (-) TimerEvent: {}
+[4.439690] (pid_tune) StdoutLine: {'line': b"Listing '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune'...\n"}
+[4.442261] (pid_tune) StdoutLine: {'line': b"Listing '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune/msg'...\n"}
+[4.461223] (-) TimerEvent: {}
+[4.493514] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune/pid_tune_s__rosidl_typesupport_fastrtps_c.so\n'}
+[4.499384] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune/pid_tune_s__rosidl_typesupport_introspection_c.so\n'}
+[4.502609] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages/pid_tune/pid_tune_s__rosidl_typesupport_c.so\n'}
+[4.507954] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/libpid_tune_msg__rosidl_generator_py.so\n'}
+[4.509193] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/msg/PidTune.idl\n'}
+[4.519595] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/msg/PidTune.msg\n'}
+[4.520236] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/ament_index/resource_index/package_run_dependencies/pid_tune\n'}
+[4.520646] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/ament_index/resource_index/parent_prefix_path/pid_tune\n'}
+[4.520921] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/environment/ament_prefix_path.sh\n'}
+[4.521181] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/environment/ament_prefix_path.dsv\n'}
+[4.521439] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/environment/path.sh\n'}
+[4.521810] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/environment/path.dsv\n'}
+[4.522127] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/local_setup.bash\n'}
+[4.522422] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/local_setup.sh\n'}
+[4.525818] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/local_setup.zsh\n'}
+[4.526231] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/local_setup.dsv\n'}
+[4.526546] (pid_tune) StdoutLine: {'line': b'-- Installing: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/package.dsv\n'}
+[4.526818] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/ament_index/resource_index/packages/pid_tune\n'}
+[4.527081] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/export_pid_tune_msg__rosidl_generator_cExport.cmake\n'}
+[4.527353] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/export_pid_tune_msg__rosidl_generator_cExport-noconfig.cmake\n'}
+[4.527716] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/export_pid_tune_msg__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[4.532690] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/export_pid_tune_msg__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[4.533248] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/pid_tune_msg__rosidl_typesupport_introspection_cExport.cmake\n'}
+[4.536272] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/pid_tune_msg__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[4.537160] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/pid_tune_msg__rosidl_typesupport_cExport.cmake\n'}
+[4.540553] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/pid_tune_msg__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[4.541380] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/export_pid_tune_msg__rosidl_generator_cppExport.cmake\n'}
+[4.542585] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/export_pid_tune_msg__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[4.543161] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/export_pid_tune_msg__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[4.545310] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/pid_tune_msg__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[4.546206] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/pid_tune_msg__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[4.550708] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/pid_tune_msg__rosidl_typesupport_cppExport.cmake\n'}
+[4.552705] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/pid_tune_msg__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[4.555948] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/export_pid_tune_msg__rosidl_generator_pyExport.cmake\n'}
+[4.562127] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/export_pid_tune_msg__rosidl_generator_pyExport-noconfig.cmake\n'}
+[4.563985] (-) TimerEvent: {}
+[4.565588] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/rosidl_cmake-extras.cmake\n'}
+[4.567683] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[4.568142] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[4.570737] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[4.573391] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[4.574105] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[4.574551] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[4.574941] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/pid_tuneConfig.cmake\n'}
+[4.575319] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/cmake/pid_tuneConfig-version.cmake\n'}
+[4.585904] (pid_tune) StdoutLine: {'line': b'-- Up-to-date: /home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/share/pid_tune/package.xml\n'}
+[4.588134] (pid_tune) CommandEnded: {'returncode': 0}
+[4.664717] (-) TimerEvent: {}
+[4.766875] (-) TimerEvent: {}
+[4.787935] (pid_tune) JobEnded: {'identifier': 'pid_tune', 'rc': 0}
+[4.867031] (-) TimerEvent: {}
+[4.969548] (-) TimerEvent: {}
+[5.073101] (-) TimerEvent: {}
+[5.176344] (-) TimerEvent: {}
+[5.277012] (-) TimerEvent: {}
+[5.380139] (-) TimerEvent: {}
+[5.483723] (-) TimerEvent: {}
+[5.587625] (-) TimerEvent: {}
+[5.689406] (-) TimerEvent: {}
+[5.791150] (-) TimerEvent: {}
+[5.897954] (-) TimerEvent: {}
+[5.999624] (-) TimerEvent: {}
+[6.105612] (-) TimerEvent: {}
+[6.210618] (-) TimerEvent: {}
+[6.311303] (-) TimerEvent: {}
+[6.416095] (-) TimerEvent: {}
+[6.461262] (osl_motor) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/osl_motor', 'build', '--build-base', '/home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/build', 'install', '--record', '/home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/hari-prasad-gajurel/Our_control/leg_control/src/osl_motor', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'hari-prasad-gajurel', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/usr/share/antigravity/resources/app/extensions/git/dist/askpass.sh', 'STM32CubeMX_PATH': '/home/hari-prasad-gajurel/STM32CubeMX', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'ANTIGRAVITY_CLI_ALIAS': 'agy', 'HOME': '/home/hari-prasad-gajurel', 'CHROME_DESKTOP': 'antigravity.desktop', 'TERM_PROGRAM_VERSION': '1.107.0', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/antigravity.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/antigravity/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/antigravity/antigravity', 'MANAGERPID': '2096', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'SYSTEMD_EXEC_PID': '2386', 'BUNDLED_DEBUGPY_PATH': '/home/hari-prasad-gajurel/.antigravity/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'IM_CONFIG_CHECK_ENV': '1', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'ANTIGRAVITY_AGENT': '1', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9281', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'hari-prasad-gajurel', 'JOURNAL_STREAM': '9:22655', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'hari-prasad-gajurel', 'STM32_PRG_PATH': '/home/hari-prasad-gajurel/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'PATH': '~/.local/bin:/home/hari-prasad-gajurel/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:~/.local/bin:/home/hari-prasad-gajurel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/hari-prasad-gajurel/.antigravity/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/Eigen-Hari:@/tmp/.ICE-unix/2346,unix/Eigen-Hari:/tmp/.ICE-unix/2346', 'INVOCATION_ID': 'da1d2078efe94c74b42a3661553e9929', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'wayland', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/hari-prasad-gajurel/.antigravity/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-d3fbca9f2357f0bf.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/hari-prasad-gajurel/.config/Antigravity/User/workspaceStorage/c11a18dd5834a5bf9a59e68a46bb377f/ms-python.python/pythonrc.py', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.OKFXM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SBX_CHROME_API_RQ': '1', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-78b3f9a067.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy:/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune:/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[6.516629] (-) TimerEvent: {}
+[6.619660] (-) TimerEvent: {}
+[6.720543] (-) TimerEvent: {}
+[6.821590] (-) TimerEvent: {}
+[6.922640] (-) TimerEvent: {}
+[7.028544] (-) TimerEvent: {}
+[7.129229] (-) TimerEvent: {}
+[7.235650] (-) TimerEvent: {}
+[7.336436] (-) TimerEvent: {}
+[7.440131] (-) TimerEvent: {}
+[7.541571] (-) TimerEvent: {}
+[7.642610] (-) TimerEvent: {}
+[7.743385] (-) TimerEvent: {}
+[7.851621] (-) TimerEvent: {}
+[7.952591] (-) TimerEvent: {}
+[8.053651] (-) TimerEvent: {}
+[8.097433] (osl_motor) StdoutLine: {'line': b'running egg_info\n'}
+[8.154742] (-) TimerEvent: {}
+[8.232000] (osl_motor) StdoutLine: {'line': b'writing ../../build/osl_motor/osl_motor.egg-info/PKG-INFO\n'}
+[8.234414] (osl_motor) StdoutLine: {'line': b'writing dependency_links to ../../build/osl_motor/osl_motor.egg-info/dependency_links.txt\n'}
+[8.235551] (osl_motor) StdoutLine: {'line': b'writing entry points to ../../build/osl_motor/osl_motor.egg-info/entry_points.txt\n'}
+[8.238915] (osl_motor) StdoutLine: {'line': b'writing requirements to ../../build/osl_motor/osl_motor.egg-info/requires.txt\n'}
+[8.239906] (osl_motor) StdoutLine: {'line': b'writing top-level names to ../../build/osl_motor/osl_motor.egg-info/top_level.txt\n'}
+[8.256221] (-) TimerEvent: {}
+[8.357081] (-) TimerEvent: {}
+[8.459202] (-) TimerEvent: {}
+[8.507730] (osl_motor) StdoutLine: {'line': b"reading manifest file '../../build/osl_motor/osl_motor.egg-info/SOURCES.txt'\n"}
+[8.518433] (osl_motor) StdoutLine: {'line': b"writing manifest file '../../build/osl_motor/osl_motor.egg-info/SOURCES.txt'\n"}
+[8.522372] (osl_motor) StdoutLine: {'line': b'running build\n'}
+[8.527218] (osl_motor) StdoutLine: {'line': b'running build_py\n'}
+[8.527875] (osl_motor) StdoutLine: {'line': b'running install\n'}
+[8.548071] (osl_motor) StdoutLine: {'line': b'running install_lib\n'}
+[8.560748] (-) TimerEvent: {}
+[8.663644] (-) TimerEvent: {}
+[8.681818] (osl_motor) StdoutLine: {'line': b'running install_data\n'}
+[8.682641] (osl_motor) StdoutLine: {'line': b'running install_egg_info\n'}
+[8.763839] (-) TimerEvent: {}
+[8.794280] (osl_motor) StdoutLine: {'line': b"removing '/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages/osl_motor-0.0.0-py3.12.egg-info' (and everything under it)\n"}
+[8.797633] (osl_motor) StdoutLine: {'line': b'Copying ../../build/osl_motor/osl_motor.egg-info to /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages/osl_motor-0.0.0-py3.12.egg-info\n'}
+[8.803083] (osl_motor) StdoutLine: {'line': b'running install_scripts\n'}
+[8.865250] (-) TimerEvent: {}
+[8.966023] (-) TimerEvent: {}
+[9.067697] (-) TimerEvent: {}
+[9.170599] (-) TimerEvent: {}
+[9.272663] (-) TimerEvent: {}
+[9.373589] (-) TimerEvent: {}
+[9.474380] (-) TimerEvent: {}
+[9.567464] (osl_motor) StdoutLine: {'line': b'Installing motor_sim script to /home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/osl_motor\n'}
+[9.570535] (osl_motor) StdoutLine: {'line': b"writing list of installed files to '/home/hari-prasad-gajurel/Our_control/leg_control/build/osl_motor/install.log'\n"}
+[9.574659] (-) TimerEvent: {}
+[9.675566] (-) TimerEvent: {}
+[9.776592] (-) TimerEvent: {}
+[9.799626] (osl_motor) CommandEnded: {'returncode': 0}
+[9.878796] (osl_motor) JobEnded: {'identifier': 'osl_motor', 'rc': 0}
+[9.884520] (-) TimerEvent: {}
+[9.884955] (ros2_jazzy) JobStarted: {'identifier': 'ros2_jazzy'}
+[9.984941] (-) TimerEvent: {}
+[10.086309] (-) TimerEvent: {}
+[10.194390] (-) TimerEvent: {}
+[10.296400] (-) TimerEvent: {}
+[10.399850] (-) TimerEvent: {}
+[10.504403] (-) TimerEvent: {}
+[10.605817] (-) TimerEvent: {}
+[10.707357] (-) TimerEvent: {}
+[10.813648] (-) TimerEvent: {}
+[10.914554] (-) TimerEvent: {}
+[11.017602] (-) TimerEvent: {}
+[11.123880] (-) TimerEvent: {}
+[11.226159] (-) TimerEvent: {}
+[11.328356] (-) TimerEvent: {}
+[11.430058] (-) TimerEvent: {}
+[11.533613] (-) TimerEvent: {}
+[11.635607] (-) TimerEvent: {}
+[11.736214] (-) TimerEvent: {}
+[11.841637] (-) TimerEvent: {}
+[11.945392] (-) TimerEvent: {}
+[12.050656] (-) TimerEvent: {}
+[12.153571] (-) TimerEvent: {}
+[12.254617] (-) TimerEvent: {}
+[12.358079] (-) TimerEvent: {}
+[12.459599] (-) TimerEvent: {}
+[12.563508] (-) TimerEvent: {}
+[12.665593] (-) TimerEvent: {}
+[12.768691] (-) TimerEvent: {}
+[12.869587] (-) TimerEvent: {}
+[12.972613] (-) TimerEvent: {}
+[13.076126] (-) TimerEvent: {}
+[13.178286] (-) TimerEvent: {}
+[13.281159] (-) TimerEvent: {}
+[13.382175] (-) TimerEvent: {}
+[13.486638] (-) TimerEvent: {}
+[13.587884] (-) TimerEvent: {}
+[13.689036] (-) TimerEvent: {}
+[13.790858] (-) TimerEvent: {}
+[13.891623] (-) TimerEvent: {}
+[13.992935] (-) TimerEvent: {}
+[14.094568] (-) TimerEvent: {}
+[14.195191] (-) TimerEvent: {}
+[14.297567] (-) TimerEvent: {}
+[14.400573] (-) TimerEvent: {}
+[14.502717] (-) TimerEvent: {}
+[14.605805] (-) TimerEvent: {}
+[14.708952] (-) TimerEvent: {}
+[14.814146] (-) TimerEvent: {}
+[14.906226] (ros2_jazzy) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/ros2_jazzy', 'build', '--build-base', '/home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/build', 'install', '--record', '/home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/hari-prasad-gajurel/Our_control/leg_control/src/ros2_jazzy', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'hari-prasad-gajurel', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/usr/share/antigravity/resources/app/extensions/git/dist/askpass.sh', 'STM32CubeMX_PATH': '/home/hari-prasad-gajurel/STM32CubeMX', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'ANTIGRAVITY_CLI_ALIAS': 'agy', 'HOME': '/home/hari-prasad-gajurel', 'CHROME_DESKTOP': 'antigravity.desktop', 'TERM_PROGRAM_VERSION': '1.107.0', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/antigravity.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/antigravity/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/antigravity/antigravity', 'MANAGERPID': '2096', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'SYSTEMD_EXEC_PID': '2386', 'BUNDLED_DEBUGPY_PATH': '/home/hari-prasad-gajurel/.antigravity/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'IM_CONFIG_CHECK_ENV': '1', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'ANTIGRAVITY_AGENT': '1', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9281', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'hari-prasad-gajurel', 'JOURNAL_STREAM': '9:22655', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'hari-prasad-gajurel', 'STM32_PRG_PATH': '/home/hari-prasad-gajurel/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'PATH': '~/.local/bin:/home/hari-prasad-gajurel/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:~/.local/bin:/home/hari-prasad-gajurel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/hari-prasad-gajurel/.antigravity/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/Eigen-Hari:@/tmp/.ICE-unix/2346,unix/Eigen-Hari:/tmp/.ICE-unix/2346', 'INVOCATION_ID': 'da1d2078efe94c74b42a3661553e9929', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'wayland', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/hari-prasad-gajurel/.antigravity/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-d3fbca9f2357f0bf.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/hari-prasad-gajurel/.config/Antigravity/User/workspaceStorage/c11a18dd5834a5bf9a59e68a46bb377f/ms-python.python/pythonrc.py', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.OKFXM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SBX_CHROME_API_RQ': '1', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-78b3f9a067.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor:/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy:/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/osl_motor/lib/python3.12/site-packages:/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/hari-prasad-gajurel/Our_control/leg_control/install/pid_tune:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[14.914876] (-) TimerEvent: {}
+[15.016410] (-) TimerEvent: {}
+[15.120109] (-) TimerEvent: {}
+[15.221249] (-) TimerEvent: {}
+[15.322521] (-) TimerEvent: {}
+[15.424580] (-) TimerEvent: {}
+[15.526321] (-) TimerEvent: {}
+[15.627593] (-) TimerEvent: {}
+[15.729589] (-) TimerEvent: {}
+[15.831635] (-) TimerEvent: {}
+[15.932276] (-) TimerEvent: {}
+[16.035925] (-) TimerEvent: {}
+[16.136586] (-) TimerEvent: {}
+[16.237246] (-) TimerEvent: {}
+[16.339963] (-) TimerEvent: {}
+[16.440745] (-) TimerEvent: {}
+[16.530246] (ros2_jazzy) StdoutLine: {'line': b'running egg_info\n'}
+[16.543672] (-) TimerEvent: {}
+[16.644354] (-) TimerEvent: {}
+[16.692770] (ros2_jazzy) StdoutLine: {'line': b'writing ../../build/ros2_jazzy/ros2_jazzy.egg-info/PKG-INFO\n'}
+[16.693746] (ros2_jazzy) StdoutLine: {'line': b'writing dependency_links to ../../build/ros2_jazzy/ros2_jazzy.egg-info/dependency_links.txt\n'}
+[16.694248] (ros2_jazzy) StdoutLine: {'line': b'writing entry points to ../../build/ros2_jazzy/ros2_jazzy.egg-info/entry_points.txt\n'}
+[16.700994] (ros2_jazzy) StdoutLine: {'line': b'writing requirements to ../../build/ros2_jazzy/ros2_jazzy.egg-info/requires.txt\n'}
+[16.703695] (ros2_jazzy) StdoutLine: {'line': b'writing top-level names to ../../build/ros2_jazzy/ros2_jazzy.egg-info/top_level.txt\n'}
+[16.744527] (-) TimerEvent: {}
+[16.845212] (-) TimerEvent: {}
+[16.936037] (ros2_jazzy) StdoutLine: {'line': b"reading manifest file '../../build/ros2_jazzy/ros2_jazzy.egg-info/SOURCES.txt'\n"}
+[16.945370] (-) TimerEvent: {}
+[16.947553] (ros2_jazzy) StdoutLine: {'line': b"writing manifest file '../../build/ros2_jazzy/ros2_jazzy.egg-info/SOURCES.txt'\n"}
+[16.948317] (ros2_jazzy) StdoutLine: {'line': b'running build\n'}
+[16.949686] (ros2_jazzy) StdoutLine: {'line': b'running build_py\n'}
+[16.950941] (ros2_jazzy) StdoutLine: {'line': b'running install\n'}
+[16.988159] (ros2_jazzy) StdoutLine: {'line': b'running install_lib\n'}
+[17.045598] (-) TimerEvent: {}
+[17.104778] (ros2_jazzy) StdoutLine: {'line': b'running install_data\n'}
+[17.109319] (ros2_jazzy) StdoutLine: {'line': b'running install_egg_info\n'}
+[17.146238] (-) TimerEvent: {}
+[17.222886] (ros2_jazzy) StdoutLine: {'line': b"removing '/home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages/ros2_jazzy-0.0.0-py3.12.egg-info' (and everything under it)\n"}
+[17.227776] (ros2_jazzy) StdoutLine: {'line': b'Copying ../../build/ros2_jazzy/ros2_jazzy.egg-info to /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages/ros2_jazzy-0.0.0-py3.12.egg-info\n'}
+[17.234730] (ros2_jazzy) StdoutLine: {'line': b'running install_scripts\n'}
+[17.246366] (-) TimerEvent: {}
+[17.347308] (-) TimerEvent: {}
+[17.448436] (-) TimerEvent: {}
+[17.550008] (-) TimerEvent: {}
+[17.650744] (-) TimerEvent: {}
+[17.751635] (-) TimerEvent: {}
+[17.852633] (-) TimerEvent: {}
+[17.953561] (-) TimerEvent: {}
+[17.985315] (ros2_jazzy) StdoutLine: {'line': b'Installing loadcell script to /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/ros2_jazzy\n'}
+[17.988753] (ros2_jazzy) StdoutLine: {'line': b'Installing oslsim_controller script to /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/ros2_jazzy\n'}
+[17.992750] (ros2_jazzy) StdoutLine: {'line': b'Installing oslsim_pid_tuner script to /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/ros2_jazzy\n'}
+[17.997852] (ros2_jazzy) StdoutLine: {'line': b'Installing oslsim_walker script to /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/ros2_jazzy\n'}
+[17.998307] (ros2_jazzy) StdoutLine: {'line': b"writing list of installed files to '/home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/install.log'\n"}
+[18.054605] (-) TimerEvent: {}
+[18.155620] (-) TimerEvent: {}
+[18.195524] (ros2_jazzy) CommandEnded: {'returncode': 0}
+[18.256631] (ros2_jazzy) JobEnded: {'identifier': 'ros2_jazzy', 'rc': 0}
+[18.259486] (-) TimerEvent: {}
+[18.260111] (-) EventReactorShutdown: {}
