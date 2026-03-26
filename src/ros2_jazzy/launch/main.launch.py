@@ -148,14 +148,14 @@ def generate_launch_description():
         package='ros2_jazzy',
         executable='oslsim_walker',
         name='oslsim_walker',
-        condition=IfCondition(LaunchConfiguration('walk'))
+        # condition=IfCondition(LaunchConfiguration('walk'))
     )
 
     controller_node = Node(
         package='ros2_jazzy',
         executable='oslsim_controller',
         name='oslsim_controller',
-        condition=IfCondition(LaunchConfiguration('control'))
+        # condition=IfCondition(LaunchConfiguration('control'))
     )
 
     pid_tuner_node = Node(
@@ -163,7 +163,7 @@ def generate_launch_description():
         executable='oslsim_pid_tuner',
         name='oslsim_pid_tuner',
         output='screen',
-        condition=IfCondition(LaunchConfiguration('control'))
+        # condition=IfCondition(LaunchConfiguration('control'))
     )
 
     # Motor simulation nodes — restore missing ROS1 motor layer.
@@ -180,7 +180,7 @@ def generate_launch_description():
             ('/motor_effort/command', '/osl_knee_controller/commands'),
         ],
         output='screen',
-        condition=IfCondition(LaunchConfiguration('control'))
+        # condition=IfCondition(LaunchConfiguration('control'))
     )
 
     ankle_motor_sim = Node(
@@ -194,7 +194,7 @@ def generate_launch_description():
             ('/motor_effort/command', '/osl_ankle_controller/commands'),
         ],
         output='screen',
-        condition=IfCondition(LaunchConfiguration('control'))
+        # condition=IfCondition(LaunchConfiguration('control'))
     )
 
     return LaunchDescription([
