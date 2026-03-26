@@ -22,6 +22,7 @@ class JointCmds:
         self.joints_list = joints
         self.t = 0.0
         self.path = path + '/data/'
+        
 
         self.osl_knee_pose = 0
         self.osl_ankle_pose = 0
@@ -38,38 +39,43 @@ class JointCmds:
         self.errori_ankle = 0.0
         self.preverror_ankle = 0.0
 
-        self.kp_knee = 250 * 0.01
-        self.ki_knee = 30 * 0.01
-        self.kd_knee = 1 * 0.01
+        self.kp_knee = 250 * 0.1
+        self.ki_knee = 30 * 0.1
+        self.kd_knee = 1 * 0.1
 
-        self.kp_ankle = 50 * 0.01
-        self.ki_ankle = 0 * 0.01
-        self.kd_ankle = 0 * 0.01
+        self.kp_ankle = 50 * 0.1
+        self.ki_ankle = 0 * 0.1
+        self.kd_ankle = 0 * 0.1
 
-        node.create_subscription(Imu, '/imu/osl_shank', self.osl_knee_pose_cb, 10)
-        node.create_subscription(Imu, '/imu/foot', self.osl_ankle_pose_cb, 10)
-        node.create_subscription(PidTune, '/oslsim/osl_knee/pid', self.osl_knee_pid_cb, 10)
-        node.create_subscription(PidTune, '/oslsim/osl_ankle/pid', self.osl_ankle_pid_cb, 10)
+        self.node = node
+
+        self.node.create_subscription(Imu, '/imu/osl_shank', self.osl_knee_pose_cb, 10)
+        self.node.create_subscription(Imu, '/imu/foot', self.osl_ankle_pose_cb, 10)
+        self.node.create_subscription(PidTune, '/oslsim/osl_knee/pid', self.osl_knee_pid_cb, 10)
+        self.node.create_subscription(PidTune, '/oslsim/osl_ankle/pid', self.osl_ankle_pid_cb, 10)
 
     def osl_knee_pid_cb(self,data):
-        self.kp_knee=float(data.kp)*0.01
-        self.kd_knee=float(data.kd)*0.01
-        self.ki_knee=float(data.ki)*0.01
+        self.kp_knee=float(data.kp)*0.1
+        self.kd_knee=float(data.kd)*0.1
+        self.ki_knee=float(data.ki)*0.1
         
     def osl_ankle_pid_cb(self,data):
-        self.kp_ankle=float(data.kp)*0.01
-        self.kd_ankle=float(data.kd)*0.01
-        self.ki_ankle=float(data.ki)*0.01
+        self.kp_ankle=float(data.kp)*0.1
+        self.kd_ankle=float(data.kd)*0.1
+        self.ki_ankle=float(data.ki)*0.1
 
     def osl_knee_pose_cb(self, data):
         temp = [data.orientation.x, data.orientation.y, data.orientation.z, data.orientation.w]
+        # print(f'Knee IMU - Quaternion: {temp}')
         (roll, pitch, yaw) = euler_from_quaternion(temp)
-        self.osl_knee_pose = -1.0 * pitch        
+        # print(f'Knee IMU - Roll: {roll:.4f}, Pitch: {pitch:.4f}, Yaw: {yaw:.4f}')
+        self.osl_knee_pose = 1.0 * yaw        
 
     def osl_ankle_pose_cb(self, data):
         temp = [data.orientation.x, data.orientation.y, data.orientation.z, data.orientation.w]
         (roll, pitch, yaw) = euler_from_quaternion(temp)
-        self.osl_ankle_pose = -1.0 * pitch
+        # print(f'Ankle IMU - Roll: {roll:.4f}, Pitch: {pitch:.4f}, Yaw: {yaw:.4f}')
+        self.osl_ankle_pose = 1.0 * yaw
 
     def update(self, dt):
         with open(self.path + 'angles.pkl', 'rb') as f:
@@ -90,6 +96,8 @@ class JointCmds:
         self.setpoint_knee = -0.0174533 * angle_knee[int(self.t%100)]
         self.setpoint_ankle = 0.0174533 * angle_ankle[int(self.t%100)]
 
+        self.node.get_logger().warn(f'Setpoints - Knee: {self.setpoint_knee:.4f}, Ankle: {self.setpoint_ankle:.4f}    Current - Knee: {self.osl_knee_pose:.4f}, Ankle: {self.osl_ankle_pose:.4f}')
+        # print(f'Setpoints - Knee: {self.setpoint_knee:.4f}, Ankle: {self.setpoint_ankle:.4f}    Current - Knee: {self.osl_knee_pose:.4f}, Ankle: {self.osl_ankle_pose:.4f}')
         self.error_knee = self.setpoint_knee - self.osl_knee_pose
         self.errord_knee = self.error_knee - self.preverror_knee
         self.errori_knee += self.error_knee
@@ -102,7 +110,8 @@ class JointCmds:
 
         self.jnt_cmd_dict['osl_ankle'] = (self.kp_ankle*self.error_ankle) + (self.kd_ankle*self.errord_ankle) + (self.ki_ankle*self.errori_ankle)
         self.jnt_cmd_dict['osl_knee'] = (self.kp_knee*self.error_knee) + (self.kd_knee*self.errord_knee) + (self.ki_knee*self.errori_knee)
-
+        # print(f'Commands - Knee: {self.jnt_cmd_dict["osl_knee"]:.4f}, Ankle: {self.jnt_cmd_dict["osl_ankle"]:.4f}')
+        self.node.get_logger().warn(f'Commands - Knee: {self.jnt_cmd_dict["osl_knee"]:.4f}, Ankle: {self.jnt_cmd_dict["osl_ankle"]:.4f}')
         # -------------------------------------- #
 
         self.preverror_knee = self.error_knee
@@ -113,6 +122,7 @@ class JointCmds:
 class Controller(Node):
     def __init__(self, joints, hz):
         super().__init__('oslsim_controller')
+        self.get_logger().info('Controller node has started.')
 
         self.joints = joints
         self.dt = 1.0 / hz

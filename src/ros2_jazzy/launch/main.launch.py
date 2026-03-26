@@ -147,14 +147,14 @@ def generate_launch_description():
         package='ros2_jazzy',
         executable='oslsim_walker',
         name='oslsim_walker',
-        condition=IfCondition(LaunchConfiguration('walk'))
+        # condition=IfCondition(LaunchConfiguration('walk'))
     )
 
     controller_node = Node(
         package='ros2_jazzy',
         executable='oslsim_controller',
         name='oslsim_controller',
-        condition=IfCondition(LaunchConfiguration('control'))
+        # condition=IfCondition(LaunchConfiguration('control'))
     )
 
     pid_tuner_node = Node(
@@ -162,7 +162,7 @@ def generate_launch_description():
         executable='oslsim_pid_tuner',
         name='oslsim_pid_tuner',
         output='screen',
-        condition=IfCondition(LaunchConfiguration('control'))
+        # condition=IfCondition(LaunchConfiguration('control'))
     )
 
 

@@ -5,11 +5,12 @@ from std_msgs.msg import Float64MultiArray
 from ament_index_python.packages import get_package_share_directory
 import pickle
 class JointCmds:
-    def __init__(self, joints, path):
+    def __init__(self, node: Node, joints, path):
         self.jnt_cmd_dict = {}
         self.joints_list = joints
         self.t = 0.0
         self.path = path + '/data/'
+        self.node = node
 
     def update(self, dt):
         sign = 1.0
@@ -26,6 +27,7 @@ class JointCmds:
         self.jnt_cmd_dict['ankle'] = -0.0174533 * (angles['angle_ankle'][abs(50 + sign * (self.t%100))])
         self.jnt_cmd_dict['hip'] = 0.0174533 * (angles['angle_thigh'][abs(50 + sign * (self.t%100))])
         self.jnt_cmd_dict['knee'] = -0.0174533 * (angles['angle_knee'][abs(50 + sign * (self.t%100))])
+        self.node.get_logger().info(f"Joint commands: {self.jnt_cmd_dict}")
 
         # -------------------------------------- #
 
@@ -38,7 +40,7 @@ class WalkerNode(Node):
         super().__init__('oslsim_walker')
         cwd = get_package_share_directory('ros2_jazzy')
 
-        self.jntcmds = JointCmds(joints=joints, path=cwd)
+        self.jntcmds = JointCmds(node=self, joints=joints, path=cwd)
         self.pub = {}
         ns_str = '/'
         cont_str = '_position_controller'
