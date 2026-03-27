@@ -112,14 +112,16 @@ def generate_launch_description():
             '/oslsim/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry',
             '/model/oslsim/odometry_with_covariance@nav_msgs/msg/Odometry@gz.msgs.OdometryWithCovariance',
             '/model/oslsim/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V',
-            '/world/empty/model/oslsim/joint_state@sensor_msgs/msg/JointState]gz.msgs.Model',
+            '/world/empty/model/oslsim/joint_state@sensor_msgs/msg/JointState[gz.msgs.Model',
             '/world/empty/model/oslsim/link/osl_foot/sensor/sensor_contact/contact@ros_gz_interfaces/msg/Contacts@gz.msgs.Contacts',
             '/loadcell/osl_foot@geometry_msgs/msg/Wrench@gz.msgs.Wrench'
         ],
         remappings=[
             # Stitches the Gazebo world-position onto the ROS global transform tree
-            ('/world/empty/model/oslsim/tf', '/tf'),
-            ('/world/empty/model/oslsim/joint_state', '/joint_states'),
+            # ('/world/empty/model/oslsim/tf', '/tf'),
+            # ('/world/empty/model/oslsim/joint_state', '/joint_states'),
+            ('/model/oslsim/tf', '/tf'),
+            ('/world/empty/model/oslsim/joint_state', '/joint_states')
             # ('/world/empty/model/oslsim/link/osl_foot/sensor/sensor_contact/contact','/osl_foot/contact')
         ],
         parameters=[{'use_sim_time': True}],
@@ -240,6 +242,6 @@ def generate_launch_description():
         controller_node,
         knee_motor_sim,
         ankle_motor_sim,
-        pid_tuner_node
+        # pid_tuner_node
     ])
 
