@@ -61,7 +61,7 @@ class MotorSimNode(Node):
         )
         
         # Timer for simulation loop
-        self.timer = self.create_timer(self.dt, self.timer_callback)
+        # self.timer = self.create_timer(self.dt, self.timer_callback)
         
         self.get_logger().info(f'Motor Sim Node started for motor: {self.motor_name}')
 
@@ -70,6 +70,27 @@ class MotorSimNode(Node):
         # Assuming input is actual voltage for now
         if len(msg.data) > 0:
             self.current_voltage = msg.data[0]
+            omega_motor = self.current_velocity_joint * self.G
+        
+            # Steady-state current approximation (V = iR + Ke*omega => i = (V - Ke*omega)/R)
+            # This is more stable than di/dt integration when L/R << dt
+            # Clamp voltage to nominal
+            v_clamped = np.clip(self.current_voltage, -self.V_nom, self.V_nom)
+            
+            self.armature_current = (v_clamped - self.Ke * omega_motor) / self.R
+            
+            # Motor Torque
+            torque_motor = self.Kt * self.armature_current
+            
+            # Joint Torque (accounting for gear ratio)
+            # Torque_joint = Torque_motor * gear_ratio (assuming 100% efficiency for now)
+            torque_joint = torque_motor * self.G
+            
+            # Publish torque (as Float64MultiArray for JointGroupEffortController)
+            msg = Float64MultiArray()
+            msg.data = [float(torque_joint)]
+            self.torque_pub.publish(msg)
+
 
     def joint_state_callback(self, msg):
         if self.motor_name in msg.name:
