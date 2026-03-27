@@ -445,7 +445,7 @@
     <limit effort="1.0" velocity="100" lower="-1.57" upper="1.57" />      
   </joint>
 
-<link name="osl_foot">
+  <link name="osl_foot">
     <inertial>
       <origin
         xyz="0.029606 -0.056108 0.033102"
@@ -576,11 +576,35 @@
       <mu2>0.5</mu2>
   </gazebo>
 
-  <joint name="osl_foot_loadcell_link_joint" type="fixed">
-      <parent link="osl_foot"/>
-      <child link="osl_foot_loadcell_link"/>
-      <origin xyz="-0.03 -0.065 0.03" rpy="0 0 0"/>
+  <gazebo reference="osl_foot_loadcell_link">
+    <kp>1000.0</kp>
+    <kd>1000.0</kd>
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <preserveFixedJoint>true</preserveFixedJoint>  <!-- ADD THIS -->
+  </gazebo>
+
+  <!-- CHANGE THIS -->
+  <joint name="osl_foot_loadcell_link_joint" type="revolute">
+    <parent link="osl_foot"/>
+    <child link="osl_foot_loadcell_link"/>
+    <origin xyz="-0.03 -0.065 0.03" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>  <!-- zero limits = acts fixed -->
+    <dynamics damping="0.0" friction="0.0"/>
   </joint>
+
+  <gazebo reference="osl_foot_loadcell_link_joint">
+    <sensor name="loadcell" type="force_torque">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <topic>/loadcell/osl_foot</topic> 
+      <force_torque>
+        <frame>child</frame>
+        <measure_direction>child_to_parent</measure_direction>
+      </force_torque>
+    </sensor>
+  </gazebo>
 
   <gazebo reference="osl_foot_loadcell_link">
     <sensor name='sensor_contact' type='contact'>
@@ -668,6 +692,11 @@
   <gazebo>
     <plugin filename="gz-sim-imu-system"
           name="gz::sim::systems::Imu">
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-forcetorque-system"
+            name="gz::sim::systems::ForceTorque">
     </plugin>
   </gazebo>
 
