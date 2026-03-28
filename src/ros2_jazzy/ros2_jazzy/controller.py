@@ -4,9 +4,11 @@ import rclpy
 from rclpy.node import Node
 
 from std_msgs.msg import Float64MultiArray
+from sensor_msgs.msg import Imu
 from sensor_msgs.msg import JointState
 from pid_tune.msg import PidTune
 from ament_index_python.packages import get_package_share_directory
+from tf_transformations import euler_from_quaternion
 
 import numpy as np
 import pickle
@@ -47,9 +49,12 @@ class JointCmds:
         self.max_errori = 0.5    # rad-sec (integrator limit)
         self.max_voltage = 10.0  # Nominal voltage
 
-        self.js_sub = node.create_subscription(JointState, '/joint_states', self.joint_state_cb, 10)
+        # self.js_sub = node.create_subscription(JointState, '/joint_states', self.joint_state_cb, 10)
+        self.knee_imu_sub = node.create_subscription(Imu, '/imu/osl_shank', self.imu_shank_cb, 10)
+        self.ankle_imu_sub = node.create_subscription(Imu, '/imu/foot', self.imu_foot_cb, 10)
         self.pid_knee_sub = node.create_subscription(PidTune, '/oslsim/osl_knee/pid', self.osl_knee_pid_cb, 10)
         self.pid_ankle_sub = node.create_subscription(PidTune, '/oslsim/osl_ankle/pid', self.osl_ankle_pid_cb, 10)
+        self.pub = node.create_publisher(Float64MultiArray, '/controller_debug', 10)
 
     def osl_knee_pid_cb(self,data):
         self.kp_knee=float(data.kp)*0.01
@@ -60,16 +65,30 @@ class JointCmds:
         self.kp_ankle=float(data.kp)*0.01
         self.kd_ankle=float(data.kd)*0.01
         self.ki_ankle=float(data.ki)*0.01
+
+    def imu_shank_cb(self, data):
+        temp = [data.orientation.x, data.orientation.y, data.orientation.z, data.orientation.w]
+        # print(f'Knee IMU - Quaternion: {temp}')
+        (roll, pitch, yaw) = euler_from_quaternion(temp)
+        # print(f'Knee IMU - Roll: {roll:.4f}, Pitch: {pitch:.4f}, Yaw: {yaw:.4f}')
+        self.osl_knee_pose = 0
+
+    def imu_foot_cb(self, data):
+        temp = [data.orientation.x, data.orientation.y, data.orientation.z, data.orientation.w]
+        # print(f'Ankle IMU - Quaternion: {temp}')
+        (roll, pitch, yaw) = euler_from_quaternion(temp)
+        # print(f'Ankle IMU - Roll: {roll:.4f}, Pitch: {pitch:.4f}, Yaw: {yaw:.4f}')
+        self.osl_ankle_pose = 0
     
 
-    def joint_state_cb(self, msg):
-        if 'osl_knee' in msg.name:
-            idx = msg.name.index('osl_knee')
-            self.osl_knee_pose = msg.position[idx]
+    # def joint_state_cb(self, msg):
+    #     if 'osl_knee' in msg.name:
+    #         idx = msg.name.index('osl_knee')
+    #         self.osl_knee_pose = msg.position[idx]
 
-        if 'osl_ankle' in msg.name:
-            idx = msg.name.index('osl_ankle')
-            self.osl_ankle_pose = msg.position[idx]
+    #     if 'osl_ankle' in msg.name:
+    #         idx = msg.name.index('osl_ankle')
+    #         self.osl_ankle_pose = msg.position[idx]
 
     def update(self, dt):
         with open(self.path + 'angles.pkl', 'rb') as f:
@@ -90,6 +109,8 @@ class JointCmds:
         self.setpoint_knee = -0.0174533 * angle_knee[int((self.t * 10) % 100)]
         self.setpoint_ankle = 0.0174533 * angle_ankle[int((self.t * 10) % 100)]
 
+        self.pub.publish(Float64MultiArray(data=[self.setpoint_knee, self.osl_knee_pose, self.setpoint_ankle, self.osl_ankle_pose]))
+
         self.error_knee = self.setpoint_knee - self.osl_knee_pose
         self.errord_knee = (self.error_knee - self.preverror_knee) / dt
         self.errori_knee += self.error_knee * dt
@@ -108,8 +129,8 @@ class JointCmds:
         v_knee = (self.kp_knee*self.error_knee) + (self.kd_knee*self.errord_knee) + (self.ki_knee*self.errori_knee)
 
         # Output Voltage Clamping
-        self.jnt_cmd_dict['osl_ankle'] = np.clip(v_ankle, -self.max_voltage, self.max_voltage)
-        self.jnt_cmd_dict['osl_knee'] = np.clip(v_knee, -self.max_voltage, self.max_voltage)
+        self.jnt_cmd_dict['osl_ankle'] = np.clip(v_ankle, -self.max_voltage, self.max_voltage) * -0.3424183
+        self.jnt_cmd_dict['osl_knee'] = np.clip(v_knee, -self.max_voltage, self.max_voltage) * 0.327 
 
         # -------------------------------------- #
 
@@ -131,7 +152,7 @@ class Controller(Node):
         for j in joints:
             self.joints_publishers[j] = self.create_publisher(
                 Float64MultiArray,
-                f'/{j}/voltage',
+                f'/{j}_controller/commands',
                 10
             )
 
@@ -156,7 +177,7 @@ class Controller(Node):
 def main():
     rclpy.init()
     joints = ['osl_knee', 'osl_ankle']
-    node = Controller(joints=joints, hz=50)
+    node = Controller(joints=joints, hz=10)
 
     try:
         rclpy.spin(node)

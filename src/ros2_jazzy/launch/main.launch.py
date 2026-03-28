@@ -7,6 +7,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from ament_index_python.packages import get_package_share_directory
 from launch_ros.descriptions import ParameterValue
 from launch.event_handlers import OnProcessExit
+from launch.actions import TimerAction
 import os
 
 def generate_launch_description():
@@ -202,6 +203,10 @@ def generate_launch_description():
         # condition=IfCondition(LaunchConfiguration('control'))
     )
 
+    delayed_controller = TimerAction(
+                        period=8.3,  # tune this value (seconds)
+                        actions=[controller_node]
+                    )
     return LaunchDescription([
         bridge,
         gz_launch,
@@ -239,9 +244,9 @@ def generate_launch_description():
         # controller_spawner,
         loadcell_node,
         walker_node,
-        controller_node,
-        knee_motor_sim,
-        ankle_motor_sim,
-        pid_tuner_node
+        delayed_controller,
+        # knee_motor_sim,
+        # ankle_motor_sim,
+        # pid_tuner_node
     ])
 
