@@ -147,11 +147,11 @@ class Controller(Node):
             self.joints_publishers[j].publish(msg)
 
         # Throttled logging — every 1 second
-        self.get_logger().info(
-            f"KNEE: SP={self.jntcmds.setpoint_knee:.3f}, Pose={self.jntcmds.osl_knee_pose:.3f}, V={jnt_cmd_dict['osl_knee']:.3f} | "
-            f"ANKLE: SP={self.jntcmds.setpoint_ankle:.3f}, Pose={self.jntcmds.osl_ankle_pose:.3f}, V={jnt_cmd_dict['osl_ankle']:.3f}",
-            throttle_duration_sec=1.0
-        )
+        # self.get_logger().info(
+        #     f"KNEE: SP={self.jntcmds.setpoint_knee:.3f}, Pose={self.jntcmds.osl_knee_pose:.3f}, V={jnt_cmd_dict['osl_knee']:.3f} | "
+        #     f"ANKLE: SP={self.jntcmds.setpoint_ankle:.3f}, Pose={self.jntcmds.osl_ankle_pose:.3f}, V={jnt_cmd_dict['osl_ankle']:.3f}",
+        #     throttle_duration_sec=1.0
+        # )
 
 def main():
     rclpy.init()

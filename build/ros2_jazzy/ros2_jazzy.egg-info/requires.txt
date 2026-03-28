@@ -1,6 +1,0 @@
-numpy
-pyyaml
-setuptools
-
-[test]
-pytest
