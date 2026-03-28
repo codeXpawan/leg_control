@@ -60,6 +60,7 @@ class JointCmds:
         self.kp_ankle=float(data.kp)*0.01
         self.kd_ankle=float(data.kd)*0.01
         self.ki_ankle=float(data.ki)*0.01
+    
 
     def joint_state_cb(self, msg):
         if 'osl_knee' in msg.name:

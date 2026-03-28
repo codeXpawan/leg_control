@@ -5,7 +5,7 @@
     publish_encoder:  true
     publish_current:  true
     publish_motor_joint_state: true
-    update_rate: 50.0
+    update_rate: 1000.0
     # motor model
     motor_nominal_voltage: 50.0 # Volts
     moment_of_inertia: 0.0001 # kgm^2

@@ -242,6 +242,6 @@ def generate_launch_description():
         controller_node,
         knee_motor_sim,
         ankle_motor_sim,
-        # pid_tuner_node
+        pid_tuner_node
     ])
 

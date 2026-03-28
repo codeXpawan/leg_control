@@ -1,0 +1,21 @@
+running egg_info
+writing ../../build/ros2_jazzy/ros2_jazzy.egg-info/PKG-INFO
+writing dependency_links to ../../build/ros2_jazzy/ros2_jazzy.egg-info/dependency_links.txt
+writing entry points to ../../build/ros2_jazzy/ros2_jazzy.egg-info/entry_points.txt
+writing requirements to ../../build/ros2_jazzy/ros2_jazzy.egg-info/requires.txt
+writing top-level names to ../../build/ros2_jazzy/ros2_jazzy.egg-info/top_level.txt
+reading manifest file '../../build/ros2_jazzy/ros2_jazzy.egg-info/SOURCES.txt'
+writing manifest file '../../build/ros2_jazzy/ros2_jazzy.egg-info/SOURCES.txt'
+running build
+running build_py
+copying ros2_jazzy/walk.py -> /home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/build/lib/ros2_jazzy
+copying ros2_jazzy/controller.py -> /home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/build/lib/ros2_jazzy
+running install
+running install_lib
+copying /home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/build/lib/ros2_jazzy/walk.py -> /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages/ros2_jazzy
+copying /home/hari-prasad-gajurel/Our_control/leg_control/build/ros2_jazzy/build/lib/ros2_jazzy/controller.py -> /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages/ros2_jazzy
+byte-compiling /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages/ros2_jazzy/walk.py to walk.cpython-312.pyc
+byte-compiling /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/lib/python3.12/site-packages/ros2_jazzy/controller.py to controller.cpython-312.pyc
+running install_data
+copying launch/main.launch.py -> /home/hari-prasad-gajurel/Our_control/leg_control/install/ros2_jazzy/share/ros2_jazzy/launch
+error: can't copy 'launch/__pycache__': doesn't exist or not a regular file
